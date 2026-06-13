@@ -1,0 +1,37 @@
+name: Mise a jour automatique du sitemap
+
+# Met a jour la date <lastmod> du sitemap automatiquement :
+#  - a chaque modification de index.html ou baremes.json
+#  - le 1er de chaque mois (au cas ou les baremes auraient change)
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'baremes.json'
+  schedule:
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mettre a jour la date du sitemap
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          sed -i "s|<lastmod>.*</lastmod>|<lastmod>${TODAY}</lastmod>|" sitemap.xml
+      - name: Commit si modifie
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet sitemap.xml; then
+            git add sitemap.xml
+            git commit -m "chore: mise a jour automatique de la date du sitemap"
+            git push
+          else
+            echo "Sitemap deja a jour."
+          fi
