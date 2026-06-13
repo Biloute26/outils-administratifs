@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biloute26.github.io/outils-administratifs/sitemap.xml
