@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outils administratifs français — Simulateurs, calculateurs et démarches</title>
+<meta name="description" content="Simulateurs d'aides sociales, calcul d'impôts, salaire brut-net, frais de notaire, cotisations auto-entrepreneur, modèles de lettres et assistant de démarches. Gratuit, basé sur les barèmes officiels 2026.">
+<meta name="keywords" content="simulateur aides sociales, calcul impôt revenu 2026, salaire brut net, frais de notaire, cotisations auto-entrepreneur, prime d'activité, RSA, lettre résiliation, mise en demeure, formulaire cerfa, démarches administratives">
+<meta name="author" content="Outils administratifs français">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://biloute26.github.io/outils-administratifs/">
+<meta name="theme-color" content="#1B2A4A">
+
+<!-- Open Graph / partage réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Outils administratifs français — Simulateurs & démarches 2026">
+<meta property="og:description" content="Calculez vos aides, votre impôt, votre salaire net, générez vos lettres et trouvez vos formulaires CERFA. Gratuit, barèmes officiels 2026.">
+<meta property="og:url" content="https://biloute26.github.io/outils-administratifs/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Outils administratifs français">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Outils administratifs français — Simulateurs & démarches 2026">
+<meta name="twitter:description" content="Aides, impôts, salaire net, lettres, formulaires CERFA. Gratuit, barèmes officiels 2026.">
+
+<!-- Données structurées Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Outils administratifs français",
+  "url": "https://biloute26.github.io/outils-administratifs/",
+  "applicationCategory": "GovernmentApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "fr-FR",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "description": "Simulateurs d'aides sociales, d'impôts, de salaire net, générateurs de lettres administratives et annuaire de formulaires CERFA officiels, basés sur les barèmes officiels français 2026.",
+  "featureList": "Simulateur RSA et prime d'activité, calcul d'impôt sur le revenu, salaire brut-net, frais de notaire, cotisations auto-entrepreneur, lettres et mises en demeure, formulaires CERFA"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Les outils sont-ils gratuits ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, tous les simulateurs, calculateurs et générateurs de documents sont entièrement gratuits et sans inscription." } },
+    { "@type": "Question", "name": "Les barèmes sont-ils à jour ?", "acceptedAnswer": { "@type": "Answer", "text": "Les calculs reposent sur les barèmes officiels français 2026 (loi de finances, revalorisations URSSAF et CAF). La date de mise à jour est affichée en haut du site." } },
+    { "@type": "Question", "name": "Ces outils remplacent-ils les simulateurs officiels ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Ils donnent des estimations indicatives. Seuls les simulateurs officiels des administrations font foi ; un lien vers chacun est fourni avec chaque résultat." } }
+  ]
+}
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586059139929294" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Spectral:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --encre:#1B2A4A;
+  --encre-claire:#3D5277;
+  --papier:#FAF8F1;
+  --papier-fonce:#F1EDE2;
+  --tampon:#C0392B;
+  --bleu-form:#2B4C9B;
+  --ligne:#D9D3C3;
+  --valide:#2E7D4F;
+  --blanc:#FFFFFF;
+  --ombre:0 2px 10px rgba(27,42,74,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'IBM Plex Sans',sans-serif;
+  background:var(--papier);
+  color:var(--encre);
+  line-height:1.6;
+  font-size:16px;
+}
+/* texture papier discrète */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(27,42,74,.025) 31px,rgba(27,42,74,.025) 32px);
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+/* ── Bandeau supérieur ── */
+.topbar{background:var(--encre);color:var(--papier);font-size:13px;padding:7px 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .maj{font-family:'IBM Plex Mono',monospace}
+.topbar .maj b{color:#F4C95D}
+
+/* ── En-tête ── */
+header.site{padding:34px 0 10px;border-bottom:3px double var(--encre)}
+.brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(26px,4.5vw,40px);letter-spacing:-.5px}
+h1 .fr{color:var(--bleu-form)}
+.brand .cachet{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1.5px;
+  color:var(--tampon);border:2px solid var(--tampon);border-radius:4px;padding:3px 9px;
+  transform:rotate(-2deg);text-transform:uppercase;white-space:nowrap;
+}
+.tagline{margin:8px 0 18px;color:var(--encre-claire);max-width:680px}
+
+/* ── Navigation catégories ── */
+nav.cats{position:sticky;top:0;background:var(--papier);z-index:50;border-bottom:1px solid var(--ligne);box-shadow:0 1px 0 rgba(27,42,74,.04)}
+nav.cats .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:thin}
+nav.cats a{
+  flex:0 0 auto;text-decoration:none;color:var(--encre);font-size:14px;font-weight:600;
+  padding:7px 14px;border:1px solid var(--ligne);border-radius:999px;background:var(--blanc);
+  transition:background .15s,color .15s;
+}
+nav.cats a:hover,nav.cats a:focus-visible{background:var(--encre);color:var(--papier);outline:none}
+nav.cats a.assist{border-color:var(--tampon);color:var(--tampon)}
+nav.cats a.assist:hover{background:var(--tampon);color:#fff}
+
+/* ── Avertissement ── */
+.avert{
+  margin:22px 0;border:1px dashed var(--tampon);background:#FDF6F4;border-radius:6px;
+  padding:12px 16px;font-size:13.5px;color:#7A2A20;display:flex;gap:10px;align-items:flex-start;
+}
+.avert svg{flex:0 0 auto;margin-top:2px}
+
+/* ── Assistant (hero) ── */
+.assistant{
+  margin:30px 0 46px;background:var(--blanc);border:1px solid var(--ligne);border-radius:10px;
+  box-shadow:var(--ombre);padding:30px clamp(18px,4vw,40px) 34px;position:relative;overflow:hidden;
+}
+.assistant::after{
+  content:"FORMULAIRE Nº 01";position:absolute;top:14px;right:18px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--ligne);
+}
+.assistant h2{font-family:'Spectral',serif;font-size:clamp(22px,3.6vw,32px);font-weight:700;margin-bottom:4px}
+.assistant p.sub{color:var(--encre-claire);margin-bottom:22px;font-size:15px}
+.champ{
+  display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;
+}
+.champ .ligne-form{flex:1;min-width:240px;position:relative}
+.champ input{
+  width:100%;border:none;border-bottom:2px dotted var(--bleu-form);background:transparent;
+  font-family:'IBM Plex Mono',monospace;font-size:clamp(16px,2.6vw,21px);color:var(--encre);
+  padding:8px 2px;outline:none;
+}
+.champ input:focus{border-bottom-style:solid}
+.champ input::placeholder{color:#A9B2C4}
+.btn{
+  font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;
+  background:var(--encre);color:var(--papier);border:none;border-radius:6px;padding:11px 22px;
+  transition:background .15s;
+}
+.btn:hover{background:var(--bleu-form)}
+.btn.rouge{background:var(--tampon)}
+.btn.rouge:hover{background:#A02F22}
+.btn.ghost{background:transparent;color:var(--encre);border:1px solid var(--ligne)}
+.btn.ghost:hover{background:var(--papier-fonce)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips button{
+  font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;cursor:pointer;color:var(--bleu-form);
+  background:#F3F6FC;border:1px solid #CBD6EC;border-radius:999px;padding:6px 13px;transition:all .15s;
+}
+.chips button:hover{background:var(--bleu-form);color:#fff}
+
+/* ── Résultat assistant : récépissé ── */
+.recepisse{
+  display:none;margin-top:28px;border-top:2px dashed var(--ligne);padding-top:24px;
+}
+.recepisse.visible{display:block;animation:apparait .35s ease}
+@keyframes apparait{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.recepisse h3{font-family:'Spectral',serif;font-size:24px;margin-bottom:2px}
+.recepisse .stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+  letter-spacing:1px;color:var(--valide);border:1.5px solid var(--valide);border-radius:4px;
+  padding:2px 8px;margin:6px 0 16px;transform:rotate(-1.5deg);text-transform:uppercase;
+}
+.etapes{counter-reset:etape;list-style:none;margin:14px 0}
+.etapes li{
+  counter-increment:etape;position:relative;padding:12px 0 12px 52px;border-bottom:1px solid var(--papier-fonce);
+}
+.etapes li::before{
+  content:counter(etape,decimal-leading-zero);position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:var(--tampon);
+  border:1px solid var(--tampon);border-radius:4px;padding:2px 7px;
+}
+.etapes li b{display:block}
+.etapes li .delai{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--bleu-form)}
+.etapes li .qui{font-size:13.5px;color:var(--encre-claire)}
+.docs-liens{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px}
+@media(max-width:640px){.docs-liens{grid-template-columns:1fr}}
+.docs-liens h4{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--encre-claire);margin-bottom:8px}
+.docs-liens ul{list-style:none}
+.docs-liens li{padding:4px 0 4px 18px;position:relative;font-size:14.5px}
+.docs-liens li::before{content:"▢";position:absolute;left:0;color:var(--bleu-form)}
+.docs-liens a{color:var(--bleu-form)}
+
+/* ── Sections catégories ── */
+section.cat{margin:54px 0;scroll-margin-top:70px}
+.cat-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--ligne);padding-bottom:10px}
+.cat-head .num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--tampon);font-weight:600}
+.cat-head h2{font-family:'Spectral',serif;font-size:clamp(21px,3vw,27px)}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.outil{
+  background:var(--blanc);border:1px solid var(--ligne);border-radius:8px;padding:18px;
+  cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;text-align:left;width:100%;
+  font-family:'IBM Plex Sans',sans-serif;color:var(--encre);
+}
+.outil:hover,.outil:focus-visible{transform:translateY(-2px);box-shadow:var(--ombre);border-color:var(--bleu-form);outline:none}
+.outil h3{font-size:16px;font-weight:600;margin-bottom:5px}
+.outil p{font-size:13.5px;color:var(--encre-claire)}
+.outil .ouvrir{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--bleu-form);margin-top:10px;display:block}
+
+/* ── Modale outil ── */
+.voile{
+  display:none;position:fixed;inset:0;background:rgba(27,42,74,.45);z-index:100;
+  padding:30px 16px;overflow-y:auto;
+}
+.voile.ouvert{display:flex;align-items:flex-start;justify-content:center}
+.fiche{
+  background:var(--papier);border-radius:10px;max-width:640px;width:100%;
+  padding:28px clamp(18px,4vw,34px) 30px;position:relative;margin:auto 0;
+  box-shadow:0 14px 50px rgba(27,42,74,.3);animation:apparait .25s ease;
+}
+.fiche .fermer{
+  position:absolute;top:12px;right:12px;background:none;border:1px solid var(--ligne);border-radius:6px;
+  width:34px;height:34px;font-size:17px;cursor:pointer;color:var(--encre);line-height:1;
+}
+.fiche .fermer:hover{background:var(--encre);color:#fff}
+.fiche h3{font-family:'Spectral',serif;font-size:23px;margin-bottom:4px;padding-right:40px}
+.fiche .ref{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--encre-claire);letter-spacing:1px;margin-bottom:18px}
+.fiche label{display:block;font-size:13.5px;font-weight:600;margin:14px 0 4px}
+.fiche input[type=number],.fiche input[type=text],.fiche input[type=date],.fiche select,.fiche textarea{
+  width:100%;padding:9px 11px;border:1px solid var(--ligne);border-radius:6px;background:#fff;
+  font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--encre);outline:none;
+}
+.fiche input:focus,.fiche select:focus,.fiche textarea:focus{border-color:var(--bleu-form)}
+.fiche .deux{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.fiche .deux{grid-template-columns:1fr}}
+.fiche .actions{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+.resultat{
+  display:none;margin-top:20px;background:#fff;border:1px dashed var(--encre);border-radius:6px;
+  padding:16px 18px;position:relative;
+}
+.resultat.visible{display:block;animation:apparait .3s ease}
+.resultat .gros{
+  font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,4vw,30px);font-weight:600;color:var(--bleu-form);
+}
+.resultat .ligne{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--papier-fonce);font-size:14px}
+.resultat .ligne span:last-child{font-family:'IBM Plex Mono',monospace;font-weight:500}
+.resultat .note{font-size:12.5px;color:var(--encre-claire);margin-top:10px}
+.resultat .note a{color:var(--bleu-form)}
+.resultat .stamp-ok{
+  position:absolute;top:-10px;right:14px;background:var(--papier);
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;
+  color:var(--valide);border:1.5px solid var(--valide);border-radius:4px;padding:1px 7px;
+  transform:rotate(2deg);
+}
+textarea.lettre{min-height:300px;font-size:13.5px !important;line-height:1.55;font-family:'IBM Plex Mono',monospace}
+
+/* ── Pied ── */
+footer{margin-top:70px;background:var(--encre);color:#C9D2E4;padding:34px 0 40px;font-size:13.5px}footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+@media(max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer h4{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+footer a{color:#9FB4DC;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer ul{list-style:none}
+footer li{padding:3px 0}
+footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ── Section CERFA ── */
+.cerfa-cats{display:flex;flex-direction:column;gap:22px}
+.cerfa-groupe h3{font-family:'Spectral',serif;font-size:18px;color:var(--encre);margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px dashed var(--ligne);display:flex;align-items:center;gap:8px}
+.cerfa-liens{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:9px}
+.cerfa-lien{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--blanc);border:1px solid var(--ligne);border-radius:7px;padding:11px 13px;text-decoration:none;color:var(--encre);transition:.15s}
+.cerfa-lien:hover{border-color:var(--bleu-form);box-shadow:var(--ombre);transform:translateY(-1px)}
+.cerfa-lien .ti{font-weight:600;font-size:14px;line-height:1.3}
+.cerfa-lien .ref{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--encre-claire);margin-top:2px}
+.cerfa-lien .fl{color:var(--bleu-form);font-weight:700;font-size:18px;flex-shrink:0}
+.cerfa-vide{color:var(--encre-claire);font-style:italic;padding:14px}
+
+/* ── Section réseau ── */
+.reseau-grille .outil{cursor:default}
+.reseau-card{display:flex;flex-direction:column;background:var(--blanc);border:1px solid var(--ligne);border-radius:10px;padding:16px 17px;text-decoration:none;color:var(--encre);transition:.15s;height:100%}
+.reseau-card:hover{border-color:var(--tampon);box-shadow:var(--ombre);transform:translateY(-2px)}
+.reseau-card .emoji{font-size:26px;margin-bottom:8px}
+.reseau-card h3{font-family:'Spectral',serif;font-size:17px;margin-bottom:5px}
+.reseau-card p{font-size:13.5px;color:var(--encre-claire);line-height:1.5;flex-grow:1}
+.reseau-card .visiter{margin-top:11px;color:var(--tampon);font-weight:700;font-size:13.5px}
+
+/* ── Bloc publicité ── */
+.pub{margin:26px auto;text-align:center;min-height:90px;display:flex;align-items:center;justify-content:center}
+.pub-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#B5AE9C;margin-bottom:4px;display:block;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Outil informatif — ne remplace pas un conseil professionnel</span>
+    <span class="maj">Barèmes à jour : <b class="maj-date">juin 2026</b></span>
+  </div>
+</div>
+
+<div id="alerte-baremes" style="display:none;background:#C0392B;color:#fff;text-align:center;padding:9px 16px;font-size:13.5px;font-weight:600">
+  ⚠ Les barèmes affichés datent de plus d'un an. Certains montants ont pu être revalorisés depuis — vérifiez sur les liens officiels indiqués dans chaque résultat.
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Outils administratifs <span class="fr">français</span></h1>
+      <span class="cachet">Barèmes officiels 2026</span>
+    </div>
+    <p class="tagline">Simulateurs, calculateurs et modèles de documents pour vos démarches : aides, impôts, travail, logement, micro-entreprise. Gratuit, sans inscription, basé sur les sources officielles.</p>
+  </div>
+</header>
+
+<nav class="cats" aria-label="Catégories">
+  <div class="wrap">
+    <a href="#assistant" class="assist">✦ Que voulez-vous faire ?</a>
+    <a href="#aides">Argent &amp; aides</a>
+    <a href="#impots">Impôts</a>
+    <a href="#travail">Travail</a>
+    <a href="#logement">Logement</a>
+    <a href="#independants">Indépendants</a>
+    <a href="#documents">Documents</a>
+    <a href="#cerfa">Formulaires CERFA</a>
+    <a href="#reseau">Autres outils</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <div class="avert">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+    <span><b>Important :</b> ces outils donnent des <b>estimations indicatives</b> fondées sur les barèmes officiels en vigueur (loi de finances 2026, décrets de revalorisation d'avril et juin 2026). Ils ne remplacent ni un conseil professionnel, ni les simulateurs officiels des administrations, seuls à faire foi. Vérifiez toujours sur les liens officiels indiqués.</span>
+  </div>
+
+  <!-- ════════ ASSISTANT ════════ -->
+  <section class="assistant" id="assistant">
+    <h2>Que voulez-vous faire&nbsp;?</h2>
+    <p class="sub">Décrivez votre situation : nous vous indiquons les démarches à effectuer, dans quel ordre, avec les délais et les organismes à contacter.</p>
+    <div class="champ">
+      <div class="ligne-form">
+        <input type="text" id="situationInput" placeholder="Ex. : je vais déménager, j'ai perdu mon emploi…" aria-label="Décrivez votre situation">
+      </div>
+      <button class="btn rouge" onclick="lancerAssistant()">Voir mes démarches</button>
+    </div>
+    <div class="chips" id="chipsSituations"></div>
+    <div class="recepisse" id="recepisse"></div>
+  </section>
+
+  <!-- Publicité -->
+  <div class="pub">
+    <div style="width:100%">
+      <span class="pub-label">Publicité</span>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2586059139929294" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+
+  <!-- ════════ ARGENT & AIDES ════════ -->
+  <section class="cat" id="aides">
+    <div class="cat-head"><span class="num">SECTION 01</span><h2>Argent &amp; aides</h2></div>
+    <div class="grille">
+      <button class="outil" onclick="ouvrirOutil('aidesSociales')"><h3>Simulateur d'aides sociales</h3><p>RSA, prime d'activité, AAH, ASS : estimez vos droits selon votre situation.</p><span class="ouvrir">→ Ouvrir le simulateur</span></button>
+      <button class="outil" onclick="ouvrirOutil('aidesLogement')"><h3>Aides au logement (APL)</h3><p>Vérifiez si vous êtes éligible aux aides au logement de la CAF.</p><span class="ouvrir">→ Vérifier mon éligibilité</span></button>
+      <button class="outil" onclick="ouvrirOutil('primeActivite')"><h3>Prime d'activité</h3><p>Estimation rapide avec les montants revalorisés d'avril 2026 (+50 €/mois en moyenne).</p><span class="ouvrir">→ Estimer ma prime</span></button>
+      <button class="outil" onclick="ouvrirOutil('resteACharge')"><h3>Reste à charge après aides</h3><p>Calculez ce qu'il vous restera réellement à payer après déduction des aides.</p><span class="ouvrir">→ Calculer</span></button>
+      <button class="outil" onclick="ouvrirOutil('retraite')"><h3>Retraite simplifiée</h3><p>Âge légal, trimestres requis et estimation de pension du régime général.</p><span class="ouvrir">→ Simuler ma retraite</span></button>
+    </div>
+  </section>
+
+  <!-- ════════ IMPÔTS ════════ -->
+  <section class="cat" id="impots">
+    <div class="cat-head"><span class="num">SECTION 02</span><h2>Impôts</h2></div>
+    <div class="grille">
+      <button class="outil" onclick="ouvrirOutil('impotRevenu')"><h3>Impôt sur le revenu</h3><p>Estimation avec le barème 2026 (revenus 2025), quotient familial et décote.</p><span class="ouvrir">→ Estimer mon impôt</span></button>
+      <button class="outil" onclick="ouvrirOutil('tva')"><h3>Calculateur de TVA</h3><p>Conversion HT ↔ TTC pour tous les taux : 20 %, 10 %, 5,5 %, 2,1 %.</p><span class="ouvrir">→ Calculer</span></button>
+      <button class="outil" onclick="ouvrirOutil('plusValue')"><h3>Plus-value immobilière</h3><p>Impôt et prélèvements sociaux avec abattements pour durée de détention.</p><span class="ouvrir">→ Simuler</span></button>
+      <button class="outil" onclick="ouvrirOutil('tranches')"><h3>Tranches d'imposition</h3><p>Découvrez votre taux marginal d'imposition (TMI) selon le barème 2026.</p><span class="ouvrir">→ Vérifier ma tranche</span></button>
+      <button class="outil" onclick="ouvrirOutil('calendrierFiscal')"><h3>Calendrier fiscal personnalisé</h3><p>Vos échéances fiscales de l'année selon votre profil.</p><span class="ouvrir">→ Voir mes échéances</span></button>
+    </div>
+  </section>
+
+  <!-- ════════ TRAVAIL ════════ -->
+  <section class="cat" id="travail">
+    <div class="cat-head"><span class="num">SECTION 03</span><h2>Travail</h2></div>
+    <div class="grille">
+      <button class="outil" onclick="ouvrirOutil('brutNet')"><h3>Salaire brut ↔ net</h3><p>Conversion instantanée selon votre statut, avec estimation du net après impôt.</p><span class="ouvrir">→ Convertir</span></button>
+      <button class="outil" onclick="ouvrirOutil('licenciement')"><h3>Indemnité de licenciement</h3><p>Indemnité légale minimale selon votre ancienneté et votre salaire.</p><span class="ouvrir">→ Calculer</span></button>
+      <button class="outil" onclick="ouvrirOutil('congesPayes')"><h3>Congés payés restants</h3><p>Jours acquis, jours pris : faites le compte de vos congés.</p><span class="ouvrir">→ Calculer</span></button>
+      <button class="outil" onclick="ouvrirOutil('preavis')"><h3>Simulateur de préavis</h3><p>Durée de préavis en cas de démission ou de licenciement.</p><span class="ouvrir">→ Simuler</span></button>
+      <button class="outil" onclick="ouvrirOutil('chomage')"><h3>Allocations chômage (ARE)</h3><p>Estimation de votre allocation journalière et de sa durée.</p><span class="ouvrir">→ Estimer</span></button>
+    </div>
+  </section>
+
+  <!-- ════════ LOGEMENT ════════ -->
+  <section class="cat" id="logement">
+    <div class="cat-head"><span class="num">SECTION 04</span><h2>Logement</h2></div>
+    <div class="grille">
+      <button class="outil" onclick="ouvrirOutil('encadrementLoyers')"><h3>Encadrement des loyers</h3><p>Votre ville est-elle concernée ? Où vérifier le loyer de référence ?</p><span class="ouvrir">→ Vérifier</span></button>
+      <button class="outil" onclick="ouvrirOutil('depotGarantie')"><h3>Dépôt de garantie</h3><p>Montant maximal légal et délais de restitution.</p><span class="ouvrir">→ Calculer</span></button>
+      <button class="outil" onclick="ouvrirOutil('fraisNotaire')"><h3>Frais de notaire</h3><p>Estimation détaillée pour un achat dans l'ancien ou dans le neuf.</p><span class="ouvrir">→ Estimer</span></button>
+      <button class="outil" onclick="ouvrirOutil('aidesRenovation')"><h3>Aides à la rénovation</h3><p>MaPrimeRénov', CEE, éco-PTZ : vérifiez votre éligibilité indicative.</p><span class="ouvrir">→ Vérifier</span></button>
+      <button class="outil" onclick="ouvrirOutil('lettresLogement')"><h3>Lettres propriétaire / locataire</h3><p>Congé du locataire, demande de travaux, restitution du dépôt de garantie…</p><span class="ouvrir">→ Générer une lettre</span></button>
+    </div>
+  </section>
+
+  <!-- ════════ INDÉPENDANTS ════════ -->
+  <section class="cat" id="independants">
+    <div class="cat-head"><span class="num">SECTION 05</span><h2>Auto-entrepreneurs &amp; indépendants</h2></div>
+    <div class="grille">
+      <button class="outil" onclick="ouvrirOutil('cotisations')"><h3>Cotisations sociales</h3><p>Montant des cotisations URSSAF selon votre activité (taux 2026).</p><span class="ouvrir">→ Calculer</span></button>
+      <button class="outil" onclick="ouvrirOutil('plafondCA')"><h3>CA restant avant plafond</h3><p>Nouveaux plafonds 2026-2028 : 203 100 € / 83 600 €. Où en êtes-vous ?</p><span class="ouvrir">→ Vérifier</span></button>
+      <button class="outil" onclick="ouvrirOutil('facture')"><h3>Facture conforme</h3><p>Générez une facture avec toutes les mentions obligatoires.</p><span class="ouvrir">→ Générer</span></button>
+      <button class="outil" onclick="ouvrirOutil('revenusNets')"><h3>Revenus nets</h3><p>De votre chiffre d'affaires à votre revenu réel, après cotisations et impôt.</p><span class="ouvrir">→ Simuler</span></button>
+      <button class="outil" onclick="ouvrirOutil('calendrierDeclarations')"><h3>Calendrier des déclarations</h3><p>Vos échéances URSSAF mensuelles ou trimestrielles.</p><span class="ouvrir">→ Voir mes dates</span></button>
+    </div>
+  </section>
+
+  <!-- ════════ DOCUMENTS ════════ -->
+  <section class="cat" id="documents">
+    <div class="cat-head"><span class="num">SECTION 06</span><h2>Génération de documents</h2></div>
+    <div class="grille">
+      <button class="outil" onclick="ouvrirOutil('lettreResiliation')"><h3>Lettre de résiliation</h3><p>Abonnement, assurance, salle de sport : résiliez en bonne et due forme.</p><span class="ouvrir">→ Générer</span></button>
+      <button class="outil" onclick="ouvrirOutil('attestationHonneur')"><h3>Attestation sur l'honneur</h3><p>Modèle conforme, personnalisé avec vos informations.</p><span class="ouvrir">→ Générer</span></button>
+      <button class="outil" onclick="ouvrirOutil('miseEnDemeure')"><h3>Mise en demeure</h3><p>Dernière étape amiable avant action en justice. Modèle structuré.</p><span class="ouvrir">→ Générer</span></button>
+      <button class="outil" onclick="ouvrirOutil('demandeRemboursement')"><h3>Demande de remboursement</h3><p>Produit défectueux, prestation non conforme, trop-perçu.</p><span class="ouvrir">→ Générer</span></button>
+      <button class="outil" onclick="ouvrirOutil('procuration')"><h3>Procuration simple</h3><p>Autorisez un tiers à effectuer une démarche en votre nom.</p><span class="ouvrir">→ Générer</span></button>
+    </div>
+  </section>
+
+  <!-- Publicité -->
+  <div class="pub">
+    <div style="width:100%">
+      <span class="pub-label">Publicité</span>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2586059139929294" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+
+  <!-- ════════ FORMULAIRES CERFA ════════ -->
+  <section class="cat" id="cerfa">
+    <div class="cat-head"><span class="num">SECTION 07</span><h2>Formulaires CERFA &amp; officiels</h2></div>
+    <p style="margin:-6px 0 18px;color:var(--encre-claire);max-width:760px">Liens directs vers les formulaires officiels à télécharger et imprimer, sur les sites du gouvernement (service-public.fr, impots.gouv.fr, ANTS…). Chaque lien renvoie vers la <b>page officielle</b> qui héberge la dernière version à jour du formulaire.</p>
+    <div id="cerfa-recherche" style="margin-bottom:18px">
+      <input type="text" id="cerfaSearch" placeholder="🔍 Rechercher un formulaire (ex. : carte grise, RSA, succession…)" oninput="filtrerCerfa()" aria-label="Rechercher un formulaire CERFA" style="width:100%;max-width:520px;padding:11px 14px;border:1.5px solid var(--ligne);border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:14px;background:var(--blanc)">
+    </div>
+    <div class="cerfa-cats" id="cerfaListe"></div>
+  </section>
+
+  <!-- ════════ RÉSEAU — AUTRES OUTILS ════════ -->
+  <section class="cat" id="reseau">
+    <div class="cat-head"><span class="num">SECTION 08</span><h2>Mes autres outils gratuits</h2></div>
+    <p style="margin:-6px 0 18px;color:var(--encre-claire);max-width:760px">D'autres sites et applications gratuits que je développe, dans le même esprit : utiles, sans inscription, accessibles à tous.</p>
+    <div class="grille reseau-grille" id="reseauListe"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>À propos</h4>
+      <p>Outils administratifs français regroupe des simulateurs et générateurs de documents pour faciliter vos démarches. Contenu informatif, mis à jour à chaque évolution des barèmes officiels.</p>
+      <p class="mono" style="margin-top:12px">Dernière mise à jour des barèmes : <span class="maj-date">juin 2026</span><br>Sources : service-public.fr · impots.gouv.fr · urssaf.fr · caf.fr · legifrance.gouv.fr</p>
+    </div>
+    <div>
+      <h4>Sources officielles</h4>
+      <ul>
+        <li><a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a></li>
+        <li><a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a></li>
+        <li><a href="https://www.caf.fr" target="_blank" rel="noopener">caf.fr</a></li>
+        <li><a href="https://www.urssaf.fr" target="_blank" rel="noopener">urssaf.fr</a></li>
+        <li><a href="https://www.francetravail.fr" target="_blank" rel="noopener">francetravail.fr</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Catégories</h4>
+      <ul>
+        <li><a href="#aides">Argent &amp; aides</a></li>
+        <li><a href="#impots">Impôts</a></li>
+        <li><a href="#travail">Travail</a></li>
+        <li><a href="#logement">Logement</a></li>
+        <li><a href="#independants">Indépendants</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#cerfa">Formulaires CERFA</a></li>
+        <li><a href="#reseau">Autres outils</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Modale -->
+<div class="voile" id="voile" onclick="if(event.target===this)fermerOutil()">
+  <div class="fiche" role="dialog" aria-modal="true" id="fiche"></div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   OUTILS ADMINISTRATIFS FRANÇAIS — moteur JS
+   Barèmes officiels en vigueur au 12 juin 2026
+   ════════════════════════════════════════════════ */
+const fmt = n => new Intl.NumberFormat('fr-FR',{maximumFractionDigits:2}).format(n);
+const eur = n => fmt(Math.round(n*100)/100)+' €';
+
+/* ───── BARÈMES 2026 (sources officielles) ───── */
+/* Barèmes : valeurs de secours intégrées (fallback). Les valeurs réelles
+   sont chargées depuis baremes.json au démarrage — éditez CE fichier-là
+   quand un barème change, le site se recalcule tout seul. */
+const B = {
+  maj: "juin 2026", majISO: "2026-06-01",
+  smicHoraire: 12.31,
+  smicMensuelBrut: 1867.02,
+  smicMensuelNet: 1477.93,
+  rsa: 651.69,
+  primeActiviteForfait: 638.28,
+  bonifMax: 240.63,
+  aah: 1041.59,
+  ass: 584.40,
+  trancheIR: [[11600,0],[29579,.11],[84577,.30],[181917,.41],[Infinity,.45]],
+  decoteSeuil: {seul:897, couple:1483},
+  decoteTaux: .4525,
+  abattementMin: 509, abattementMax: 14555,
+  plafondVente: 203100, plafondService: 83600,
+  tvaVente: 85000, tvaService: 37500,
+  txVente: .123, txServiceBIC: .212, txBNC: .256, txCIPAV: .232,
+  vlVente: .01, vlServiceBIC: .017, vlBNC: .022,
+  abatVente: .71, abatServiceBIC: .50, abatBNC: .34
+};
+
+/* Charge baremes.json et met à jour B + l'affichage de la date + la bannière d'alerte */
+async function chargerBaremes(){
+  try {
+    const r = await fetch('baremes.json?v=' + Date.now());
+    if(!r.ok) throw new Error('fetch');
+    const j = await r.json();
+    if(Array.isArray(j.trancheIR)){
+      j.trancheIR = j.trancheIR.map(([s,t]) => [s >= 1e12 ? Infinity : s, t]);
+    }
+    Object.assign(B, j);
+  } catch(e) {
+    console.warn('baremes.json indisponible, valeurs de secours utilisées.');
+  }
+  // Affichage de la date de mise à jour
+  document.querySelectorAll('.maj-date').forEach(el => el.textContent = B.maj);
+  // Bannière d'alerte si les barèmes ont plus de 12 mois
+  try {
+    const d = new Date(B.majISO);
+    const moisEcoules = (Date.now() - d.getTime()) / (1000*60*60*24*30.44);
+    if(moisEcoules > 12){
+      const banniere = document.getElementById('alerte-baremes');
+      if(banniere) banniere.style.display = 'block';
+    }
+  } catch(e){}
+}
+
+/* ════════ ASSISTANT DE SITUATIONS ════════ */
+const SITUATIONS = {
+  demenagement: {
+    chips: "🚚 Je déménage",
+    mots: ["déménag","demenag","nouveau logement","changer d'adresse","changement d'adresse"],
+    titre: "Vous déménagez",
+    etapes: [
+      ["Donner congé à votre propriétaire","Lettre recommandée AR ou remise en main propre. Préavis : 3 mois (1 mois en zone tendue, meublé, ou cas particuliers).","3 mois avant — Propriétaire / agence"],
+      ["Prévenir votre assureur habitation","Transfert ou résiliation du contrat. L'assurance du nouveau logement doit être active le jour de l'emménagement.","1 mois avant — Assureur"],
+      ["Transférer ou souscrire électricité / gaz / internet","Relevez les compteurs le jour du départ. Comptez 5 à 15 jours pour l'ouverture d'une ligne internet.","2 à 4 semaines avant — EDF/Engie/fournisseurs, opérateur"],
+      ["Déclarer votre changement d'adresse en une fois","Le service en ligne officiel prévient simultanément : impôts, CAF, CPAM, France Travail, caisses de retraite, service des cartes grises.","Dès la date connue — service-public.fr"],
+      ["Mettre à jour votre carte grise","Obligatoire sous 1 mois après le déménagement (gratuit pour les 3 premiers changements d'adresse).","Sous 1 mois après — ANTS"],
+      ["Faire suivre votre courrier","Service de réexpédition La Poste (6 ou 12 mois, payant).","1 semaine avant — La Poste"],
+      ["Inscription sur les listes électorales de la nouvelle commune","En ligne ou en mairie.","Dès l'arrivée — Mairie / service-public.fr"]
+    ],
+    docs: ["Bail et état des lieux d'entrée","Justificatif du nouveau domicile","Pièce d'identité","RIB","Relevés de compteurs"],
+    liens: [["Déclaration de changement d'adresse en ligne","https://www.service-public.fr/particuliers/vosdroits/R11193"],["Changement d'adresse carte grise (ANTS)","https://ants.gouv.fr"],["Préavis de location — règles","https://www.service-public.fr/particuliers/vosdroits/F1168"]]
+  },
+  perteEmploi: {
+    chips: "💼 J'ai perdu mon emploi",
+    mots: ["perdu mon emploi","licenci","chômage","chomage","fin de cdd","rupture conventionnelle","perte d'emploi","sans emploi"],
+    titre: "Vous venez de perdre votre emploi",
+    etapes: [
+      ["Récupérer vos documents de fin de contrat","Certificat de travail, attestation France Travail, solde de tout compte. L'employeur doit vous les remettre.","Dernier jour de contrat — Employeur"],
+      ["Vous inscrire à France Travail","L'inscription dans les 12 mois ouvre vos droits, mais inscrivez-vous immédiatement : l'indemnisation ne démarre qu'à partir de l'inscription.","Dès le 1er jour — francetravail.fr"],
+      ["Vérifier vos droits à l'ARE","Il faut avoir travaillé au moins 6 mois sur les 24 derniers mois (36 mois si 53 ans et plus). Utilisez notre simulateur ci-dessous.","Lors de l'inscription — France Travail"],
+      ["Demander la portabilité de votre mutuelle","Maintien gratuit de la complémentaire santé d'entreprise jusqu'à 12 mois si vous êtes indemnisé.","Sous 10 jours — Employeur / mutuelle"],
+      ["Actualiser votre situation CAF","La perte d'emploi peut ouvrir ou augmenter vos droits : prime d'activité recalculée, RSA, aides au logement.","Dès le changement — caf.fr"],
+      ["Actualisation mensuelle obligatoire","Chaque mois entre le 28 et le 15, sous peine de radiation.","Tous les mois — francetravail.fr"]
+    ],
+    docs: ["Attestation employeur France Travail","Certificat de travail","Pièce d'identité","RIB","Carte vitale","Bulletins de salaire des 24 derniers mois"],
+    liens: [["S'inscrire à France Travail","https://www.francetravail.fr"],["Allocation chômage : conditions","https://www.service-public.fr/particuliers/vosdroits/F14860"],["Simulateur de droits CAF","https://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation"]]
+  },
+  naissance: {
+    chips: "👶 J'attends un enfant",
+    mots: ["enceinte","attends un enfant","naissance","bébé","bebe","grossesse","futur parent","accouch"],
+    titre: "Vous attendez un enfant",
+    etapes: [
+      ["Déclarer la grossesse","Premier examen prénatal avant la fin de la 14e semaine, puis déclaration transmise à la CPAM et à la CAF (souvent automatique par le médecin).","Avant 14 semaines — Médecin / sage-femme"],
+      ["Examiner vos droits CAF","Prime à la naissance (sous conditions de ressources, versée au 7e mois), allocation de base PAJE.","Dès la déclaration — caf.fr"],
+      ["Prévenir votre employeur","Aucun délai légal, mais nécessaire pour bénéficier de la protection et organiser le congé maternité (16 semaines pour un 1er ou 2e enfant).","Quand vous le souhaitez — Employeur"],
+      ["Déclarer la naissance en mairie","Obligatoire dans les 5 jours suivant l'accouchement, à la mairie du lieu de naissance.","Sous 5 jours — Mairie"],
+      ["Rattacher l'enfant à la Sécurité sociale et à votre mutuelle","Et mise à jour de la carte vitale.","Premières semaines — CPAM / mutuelle"],
+      ["Congé paternité / second parent","28 jours (dont 7 obligatoires), à prendre dans les 6 mois. Prévenir l'employeur 1 mois avant.","1 mois avant la date choisie — Employeur + CPAM"],
+      ["Penser au mode de garde","Crèche (s'inscrire dès la grossesse !), assistante maternelle, CMG de la CAF.","Le plus tôt possible — Mairie / CAF"]
+    ],
+    docs: ["Déclaration de grossesse","Livret de famille ou acte de naissance","Justificatifs de ressources","RIB"],
+    liens: [["PAJE et prime à la naissance","https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-personnelle"],["Déclaration de naissance","https://www.service-public.fr/particuliers/vosdroits/F961"],["Congé de paternité","https://www.service-public.fr/particuliers/vosdroits/F3156"]]
+  },
+  retraiteSit: {
+    chips: "🏖️ Je pars à la retraite",
+    mots: ["retraite","pension","fin de carrière","fin de carriere"],
+    titre: "Vous préparez votre départ à la retraite",
+    etapes: [
+      ["Vérifier votre relevé de carrière","Contrôlez vos trimestres sur votre compte retraite. Signalez toute anomalie (périodes manquantes, service militaire, chômage…).","2 ans avant — info-retraite.fr"],
+      ["Déterminer votre âge de départ","Âge légal : 64 ans pour les générations 1968 et suivantes (transition progressive pour 1961-1967). Taux plein automatique à 67 ans.","2 ans avant — Notre simulateur ci-dessous"],
+      ["Faire une estimation de pension","Le simulateur officiel M@rel utilise vos données réelles, tous régimes confondus.","18 mois avant — info-retraite.fr"],
+      ["Déposer votre demande unique de retraite","Une seule demande en ligne pour tous vos régimes (base + complémentaire).","6 mois avant la date choisie — info-retraite.fr"],
+      ["Prévenir votre employeur","Respect du préavis applicable (souvent 1 à 3 mois selon la convention collective).","Selon préavis — Employeur"],
+      ["Vérifier les droits annexes","Cumul emploi-retraite, pension de réversion pour le conjoint, aides (ASPA si petite retraite).","Au moment du départ — Caisse de retraite"]
+    ],
+    docs: ["Relevé de carrière","Pièce d'identité","RIB","Derniers bulletins de salaire","Livret de famille"],
+    liens: [["Votre compte retraite officiel","https://www.info-retraite.fr"],["Demande de retraite en ligne","https://www.lassuranceretraite.fr"],["Âge légal et trimestres","https://www.service-public.fr/particuliers/vosdroits/F14043"]]
+  },
+  creationEntreprise: {
+    chips: "🚀 Je crée mon entreprise",
+    mots: ["créer mon entreprise","creer mon entreprise","auto-entrepreneur","auto entrepreneur","micro-entreprise","micro entreprise","me lancer","freelance","independant","indépendant","créer une société","creer une societe"],
+    titre: "Vous créez votre activité indépendante",
+    etapes: [
+      ["Choisir votre statut","Micro-entreprise (simple, plafonds 2026 : 203 100 € ventes / 83 600 € services), entreprise individuelle au réel, ou société (SASU, EURL).","Avant tout — Réflexion / conseil"],
+      ["Vérifier les exigences de votre activité","Activités réglementées (artisanat, bâtiment…) : qualification ou diplôme exigé, assurance décennale pour le BTP.","Avant l'immatriculation — CMA / ordres professionnels"],
+      ["Immatriculer votre entreprise","Toutes les formalités passent par le Guichet unique de l'INPI. Gratuit pour une micro-entreprise. Vous recevez votre SIRET sous 1 à 4 semaines.","J0 — formalites.entreprises.gouv.fr"],
+      ["Demander l'ACRE si éligible","Exonération partielle de cotisations la 1re année (50 %). À demander dans les 45 jours pour les micro-entrepreneurs.","Sous 45 jours — urssaf.fr"],
+      ["Ouvrir un compte bancaire dédié","Obligatoire en micro-entreprise si CA > 10 000 € deux années de suite. Recommandé dès le départ.","1er mois — Banque"],
+      ["Mettre en place facturation et déclarations","Factures avec mentions obligatoires (notre générateur ci-dessous), déclaration de CA mensuelle ou trimestrielle à l'URSSAF même si CA nul.","Dès la 1re vente — urssaf.fr"],
+      ["Anticiper la facturation électronique","Obligation de réception des factures électroniques depuis septembre 2026 pour toutes les entreprises.","Sept. 2026 — Plateforme agréée"]
+    ],
+    docs: ["Pièce d'identité","Justificatif de domicile","Diplômes (activités réglementées)","Déclaration sur l'honneur de non-condamnation"],
+    liens: [["Guichet unique des formalités","https://formalites.entreprises.gouv.fr"],["Portail officiel auto-entrepreneur URSSAF","https://www.autoentrepreneur.urssaf.fr"],["L'ACRE : conditions","https://www.service-public.fr/particuliers/vosdroits/F11677"]]
+  },
+  mariage: {
+    chips: "💍 Je me marie / me pacse",
+    mots: ["marie","mariage","pacs","pacse"],
+    titre: "Vous vous mariez ou vous pacsez",
+    etapes: [
+      ["Constituer le dossier","Mariage : dossier en mairie (actes de naissance, justificatifs de domicile, témoins). PACS : convention + déclaration conjointe, en mairie ou chez un notaire.","2 à 6 mois avant — Mairie / notaire"],
+      ["Publication des bans (mariage)","Affichage obligatoire en mairie pendant 10 jours avant la cérémonie.","Au moins 10 jours avant — Mairie"],
+      ["Prévenir les impôts","Mariage ou PACS = imposition commune dès l'année de l'union (déclaration commune ou option pour deux déclarations séparées la 1re année). Mettez à jour votre taux de prélèvement à la source.","Dans les 60 jours — impots.gouv.fr"],
+      ["Informer les organismes","CAF, CPAM, mutuelle, banque, assurances, employeur (jours de congés pour événement familial : 4 jours).","Le mois suivant — Organismes concernés"],
+      ["Choisir l'usage du nom","Possibilité d'utiliser le nom du conjoint comme nom d'usage : mise à jour de la carte d'identité et du passeport.","Quand vous voulez — ANTS / mairie"]
+    ],
+    docs: ["Actes de naissance de moins de 3 mois","Pièces d'identité","Justificatifs de domicile","Liste des témoins (mariage)","Convention de PACS"],
+    liens: [["Se marier : démarches","https://www.service-public.fr/particuliers/vosdroits/N142"],["Conclure un PACS","https://www.service-public.fr/particuliers/vosdroits/N144"],["Mariage/PACS et impôts","https://www.impots.gouv.fr/particulier/je-me-marie-ou-me-pacse"]]
+  },
+  separation: {
+    chips: "💔 Je me sépare / divorce",
+    mots: ["sépar","separ","divorce","rupture pacs","quitte mon conjoint"],
+    titre: "Vous vous séparez ou divorcez",
+    etapes: [
+      ["Choisir la procédure adaptée","Divorce par consentement mutuel (sans juge, par actes d'avocats), ou divorce judiciaire. Rupture de PACS : simple déclaration. Un avocat par époux est obligatoire pour un divorce.","Dès la décision — Avocat(s)"],
+      ["Organiser la situation des enfants","Résidence, droit de visite, pension alimentaire (barème indicatif du ministère de la Justice). En cas d'accord, faire homologuer la convention.","Priorité — Avocats / JAF"],
+      ["Prévenir la CAF et les impôts","La séparation modifie vos droits (RSA, prime d'activité, allocation de soutien familial si parent isolé) et votre imposition (déclarations séparées dès l'année de séparation).","Dans le mois — caf.fr / impots.gouv.fr"],
+      ["Régler le logement","Qui reste ? Désolidarisation du bail ou du prêt immobilier, état des lieux si départ.","Selon situation — Propriétaire / banque"],
+      ["Mettre à jour comptes et assurances","Comptes joints, procurations, bénéficiaires d'assurance-vie, mutuelle.","Rapidement — Banque / assureurs"]
+    ],
+    docs: ["Livret de famille","Convention de divorce ou jugement","Justificatifs de revenus","Bail ou titre de propriété"],
+    liens: [["Divorce : les procédures","https://www.service-public.fr/particuliers/vosdroits/N159"],["Pension alimentaire : barème indicatif","https://www.justice.fr/simulateurs/pensions"],["Séparation et CAF","https://www.caf.fr/allocataires/vies-de-famille/separation"]]
+  },
+  deces: {
+    chips: "🕊️ Décès d'un proche",
+    mots: ["décès","deces","décédé","decede","mort d'un proche","perdu un proche","succession"],
+    titre: "Vous faites face au décès d'un proche",
+    etapes: [
+      ["Faire constater le décès","Par un médecin (certificat de décès). À domicile, appelez le médecin traitant ou le 15.","Immédiatement — Médecin"],
+      ["Déclarer le décès en mairie","Dans les 24 heures (hors week-end). Les pompes funèbres peuvent s'en charger. Demandez plusieurs copies de l'acte de décès.","Sous 24 h — Mairie du lieu de décès"],
+      ["Organiser les obsèques","Inhumation ou crémation dans les 6 jours ouvrables. Vérifiez l'existence d'un contrat obsèques ou de volontés écrites.","Sous 6 jours — Pompes funèbres"],
+      ["Prévenir les organismes essentiels","Employeur ou caisse de retraite, CPAM, banque (blocage des comptes), assurances, mutuelle, bailleur. Beaucoup acceptent le service en ligne unique de déclaration.","Sous 1 à 4 semaines — service-public.fr"],
+      ["Contacter un notaire pour la succession","Obligatoire si bien immobilier, testament, ou succession > 5 000 €. La déclaration de succession aux impôts doit être faite sous 6 mois.","Sous 1 mois (déclaration : 6 mois) — Notaire"],
+      ["Vérifier les droits du conjoint survivant","Pension de réversion (à demander, non automatique), capital décès de la CPAM, allocation veuvage éventuelle.","Dès que possible — Caisses de retraite / CPAM"]
+    ],
+    docs: ["Certificat de décès","Acte de décès (plusieurs copies)","Livret de famille","Contrats d'assurance-vie","Titres de propriété, RIB du défunt"],
+    liens: [["Déclarer un décès aux organismes (service unique)","https://www.service-public.fr/particuliers/vosdroits/F909"],["La succession étape par étape","https://www.service-public.fr/particuliers/vosdroits/N171"],["Pension de réversion","https://www.service-public.fr/particuliers/vosdroits/F13104"]]
+  },
+  achatImmo: {
+    chips: "🏠 J'achète un logement",
+    mots: ["achète","achete","acheter","achat immobilier","devenir propriétaire","devenir proprietaire","acquisition"],
+    titre: "Vous achetez un logement",
+    etapes: [
+      ["Évaluer votre capacité d'emprunt","Taux d'endettement maximal : 35 % des revenus nets (assurance comprise). Vérifiez votre éligibilité au PTZ (prêt à taux zéro, élargi à tout le neuf depuis 2025).","Avant les visites — Banques / courtier"],
+      ["Signer le compromis de vente","Versement d'un dépôt (5 à 10 %). Délai de rétractation de 10 jours pour l'acheteur.","À l'accord — Notaire / agence"],
+      ["Obtenir votre financement","La condition suspensive d'obtention de prêt vous protège (45 à 60 jours en général). Comparez aussi l'assurance emprunteur (délégation possible).","45-60 jours — Banque"],
+      ["Anticiper les frais de notaire","Environ 7 à 8 % dans l'ancien, 2 à 3 % dans le neuf. Utilisez notre simulateur ci-dessous.","Avant la signature — Notre simulateur"],
+      ["Signature de l'acte authentique","Remise des clés. Le notaire enregistre la vente et publie au fichier immobilier.","3 mois après compromis env. — Notaire"],
+      ["Après l'achat : les indispensables","Assurance habitation (obligatoire dès la signature), transfert des contrats d'énergie, taxe foncière au prorata, déclaration d'occupation sur impots.gouv.fr.","Dès la remise des clés — Assureur / impots.gouv.fr"]
+    ],
+    docs: ["3 derniers bulletins de salaire","Avis d'imposition","Relevés de comptes","Compromis de vente","Justificatif d'apport"],
+    liens: [["Le PTZ : conditions 2026","https://www.service-public.fr/particuliers/vosdroits/F10871"],["Achat immobilier : étapes","https://www.service-public.fr/particuliers/vosdroits/N107"],["Frais d'acquisition — notaires","https://www.notaires.fr"]]
+  },
+  etudiant: {
+    chips: "🎓 Je deviens étudiant",
+    mots: ["étudiant","etudiant","études supérieures","etudes superieures","fac","université","universite","parcoursup"],
+    titre: "Vous entrez dans l'enseignement supérieur",
+    etapes: [
+      ["Demander la bourse et le logement CROUS","Dossier social étudiant (DSE) à remplir chaque année entre mars et mai pour la rentrée suivante.","Mars-mai — messervices.etudiant.gouv.fr"],
+      ["Payer la CVEC","Contribution de vie étudiante (~105 €) obligatoire avant l'inscription. Gratuite pour les boursiers.","Avant l'inscription — cvec.etudiant.gouv.fr"],
+      ["Demander l'aide au logement","APL étudiante dès l'entrée dans le logement. Attention : elle peut faire perdre les allocations familiales de vos parents si vous y êtes rattaché — comparez.","Dès l'emménagement — caf.fr"],
+      ["Santé : rien à faire ou presque","Vous restez affilié au régime général. Pensez à une mutuelle étudiante ou au rattachement à celle des parents, et déclarez un médecin traitant.","À la rentrée — ameli.fr"],
+      ["Les aides à connaître","Avance Loca-Pass (dépôt de garantie avancé), garantie Visale (caution gratuite de l'État), repas CROUS à 1 € pour les boursiers, aide au permis, Pass Culture.","Toute l'année — visale.fr / actionlogement.fr"]
+    ],
+    docs: ["Avis d'imposition des parents","Certificat de scolarité","Pièce d'identité","RIB","Bail étudiant"],
+    liens: [["Dossier social étudiant (bourse + logement)","https://www.messervices.etudiant.gouv.fr"],["Garantie Visale (caution gratuite)","https://www.visale.fr"],["Simulateur d'aides étudiantes","https://www.1jeune1solution.gouv.fr"]]
+  }
+};
+
+function lancerAssistant(cle){
+  let s;
+  if(cle){ s = SITUATIONS[cle]; }
+  else {
+    const q = document.getElementById('situationInput').value.toLowerCase();
+    if(!q.trim()) return;
+    for(const k in SITUATIONS){
+      if(SITUATIONS[k].mots.some(m => q.includes(m))){ s = SITUATIONS[k]; break; }
+    }
+  }
+  const r = document.getElementById('recepisse');
+  if(!s){
+    r.innerHTML = `<h3>Situation non reconnue</h3>
+    <p style="margin:10px 0">Nous n'avons pas encore de fiche pour cette situation. Essayez l'une des situations proposées ci-dessus, ou consultez directement <a href="https://www.service-public.fr" target="_blank" rel="noopener" style="color:var(--bleu-form)">service-public.fr</a>, le site officiel de l'administration française, qui couvre toutes les démarches.</p>`;
+    r.classList.add('visible');
+    r.scrollIntoView({behavior:'smooth',block:'nearest'});
+    return;
+  }
+  let html = `<h3>${s.titre}</h3><span class="stamp">Fiche démarches — vérifiée juin 2026</span><ol class="etapes">`;
+  s.etapes.forEach(e=>{
+    const [titre, detail, meta] = e;
+    const [delai, qui] = meta.split('—').map(x=>x.trim());
+    html += `<li><b>${titre}</b><span class="qui">${detail}</span><span class="delai">⏱ ${delai} · ${qui||''}</span></li>`;
+  });
+  html += `</ol><div class="docs-liens"><div><h4>Documents à préparer</h4><ul>`;
+  s.docs.forEach(d=> html += `<li>${d}</li>`);
+  html += `</ul></div><div><h4>Liens officiels</h4><ul>`;
+  s.liens.forEach(l=> html += `<li><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a></li>`);
+  html += `</ul></div></div>
+  <p style="font-size:12.5px;color:var(--encre-claire);margin-top:16px">Cette fiche est indicative : les délais et conditions peuvent varier selon votre situation précise. Référez-vous aux liens officiels.</p>`;
+  r.innerHTML = html;
+  r.classList.add('visible');
+  r.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// Chips + entrée clavier
+(function(){
+  const c = document.getElementById('chipsSituations');
+  for(const k in SITUATIONS){
+    const b = document.createElement('button');
+    b.textContent = SITUATIONS[k].chips;
+    b.onclick = ()=>{ document.getElementById('situationInput').value=''; lancerAssistant(k); };
+    c.appendChild(b);
+  }
+  document.getElementById('situationInput').addEventListener('keydown',e=>{
+    if(e.key==='Enter') lancerAssistant();
+  });
+})();
+</script>
+
+<script>
+/* ════════ MOTEUR D'OUTILS ════════ */
+function ouvrirOutil(id){
+  const o = OUTILS[id];
+  if(!o) return;
+  document.getElementById('fiche').innerHTML =
+    `<button class="fermer" onclick="fermerOutil()" aria-label="Fermer">✕</button>
+     <h3>${o.titre}</h3><div class="ref">${o.ref}</div>${o.corps}
+     <div class="resultat" id="res-${id}"></div>`;
+  document.getElementById('voile').classList.add('ouvert');
+  document.body.style.overflow = 'hidden';
+}
+function fermerOutil(){
+  document.getElementById('voile').classList.remove('ouvert');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') fermerOutil(); });
+function montrer(id, html, stamp){
+  const r = document.getElementById('res-'+id);
+  r.innerHTML = `<span class="stamp-ok">${stamp||'Résultat'}</span>` + html;
+  r.classList.add('visible');
+}
+function v(id){ const e=document.getElementById(id); return e ? parseFloat(e.value)||0 : 0; }
+function t(id){ const e=document.getElementById(id); return e ? e.value.trim() : ''; }
+function copier(idTextarea, btn){
+  const ta = document.getElementById(idTextarea);
+  ta.select(); ta.setSelectionRange(0,99999);
+  navigator.clipboard.writeText(ta.value).then(()=>{
+    const txt = btn.textContent; btn.textContent='✓ Copié !';
+    setTimeout(()=>btn.textContent=txt, 1800);
+  });
+}
+const aujourdhui = ()=> new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+
+/* ── Calcul IR (mutualisé) ── */
+function calculIR(revenuImposable, parts, couple){
+  const qf = revenuImposable / parts;
+  let impotPart = 0, reste = qf, prec = 0, tmi = 0;
+  for(const [seuil, taux] of B.trancheIR){
+    const tranche = Math.min(qf, seuil) - prec;
+    if(tranche > 0){ impotPart += tranche * taux; if(taux>0 && qf>prec) tmi = taux; }
+    prec = seuil;
+    if(qf <= seuil) break;
+  }
+  let impot = impotPart * parts;
+  // Décote
+  const seuilDecote = couple ? B.decoteSeuil.couple : B.decoteSeuil.seul;
+  let decote = 0;
+  if(impot < seuilDecote / B.decoteTaux){
+    decote = Math.max(0, seuilDecote - B.decoteTaux * impot);
+    decote = Math.min(decote, impot);
+  }
+  return { impot: Math.max(0, Math.round(impot - decote)), brut: Math.round(impot), decote: Math.round(decote), tmi };
+}
+
+/* ════════ DÉFINITION DES 30 OUTILS ════════ */
+const OUTILS = {
+
+/* ───────── 01. ARGENT & AIDES ───────── */
+aidesSociales: {
+  titre:"Simulateur d'aides sociales", ref:"MONTANTS AU 1ER AVRIL 2026 · CAF / MSA",
+  corps:`<label>Votre situation</label>
+  <select id="as-sit"><option value="seul">Personne seule</option><option value="couple">En couple</option></select>
+  <div class="deux"><div><label>Enfants à charge</label><input type="number" id="as-enf" value="0" min="0"></div>
+  <div><label>Revenus d'activité nets du foyer (€/mois)</label><input type="number" id="as-rev" value="0" min="0"></div></div>
+  <label>Autres ressources (pensions, allocations…) €/mois</label><input type="number" id="as-autres" value="0" min="0">
+  <label style="margin-top:14px"><input type="checkbox" id="as-handicap" style="width:auto;margin-right:8px">Situation de handicap (taux ≥ 80 % ou 50-79 % avec restriction d'accès à l'emploi)</label>
+  <div class="actions"><button class="btn" onclick="calcAidesSociales()">Estimer mes droits</button></div>`,
+  },
+aidesLogement: {
+  titre:"Aides au logement (APL, ALF, ALS)", ref:"ÉLIGIBILITÉ INDICATIVE · CAF",
+  corps:`<label>Votre statut</label>
+  <select id="al-statut"><option value="locataire">Locataire (logement vide ou meublé)</option><option value="colocation">Colocataire</option><option value="foyer">Résident en foyer / résidence étudiante</option><option value="accession">Propriétaire accédant (prêt ancien conventionné)</option><option value="proprio">Propriétaire occupant sans prêt aidé</option><option value="heberge">Hébergé gratuitement</option></select>
+  <div class="deux"><div><label>Loyer hors charges (€/mois)</label><input type="number" id="al-loyer" value="600"></div>
+  <div><label>Revenus nets du foyer (€/mois)</label><input type="number" id="al-rev" value="1300"></div></div>
+  <label>Le logement est-il votre résidence principale, décent, et non loué par un parent direct ?</label>
+  <select id="al-cond"><option value="oui">Oui</option><option value="non">Non / je ne sais pas</option></select>
+  <div class="actions"><button class="btn" onclick="calcAidesLogement()">Vérifier mon éligibilité</button></div>`,
+},
+primeActivite: {
+  titre:"Prime d'activité", ref:"FORFAIT 638,28 € · BONIFICATION RELEVÉE À 240,63 € MAX (AVRIL 2026)",
+  corps:`<label>Votre situation</label>
+  <select id="pa-sit"><option value="seul">Personne seule</option><option value="couple">En couple</option></select>
+  <div class="deux"><div><label>Enfants à charge</label><input type="number" id="pa-enf" value="0" min="0"></div>
+  <div><label>Vos revenus d'activité nets (€/mois)</label><input type="number" id="pa-rev" value="1400"></div></div>
+  <label>Revenus d'activité du conjoint (€/mois)</label><input type="number" id="pa-revc" value="0">
+  <label>Autres ressources du foyer (€/mois)</label><input type="number" id="pa-autres" value="0">
+  <div class="actions"><button class="btn" onclick="calcPrimeActivite()">Estimer ma prime</button></div>`,
+},
+resteACharge: {
+  titre:"Reste à charge après aides", ref:"CALCUL UNIVERSEL",
+  corps:`<label>Montant total de la dépense (€)</label><input type="number" id="rc-dep" value="1000">
+  <label>Aide nº 1 (€) — ex. MaPrimeRénov', CAF…</label><input type="number" id="rc-a1" value="0">
+  <label>Aide nº 2 (€)</label><input type="number" id="rc-a2" value="0">
+  <label>Aide nº 3 (€)</label><input type="number" id="rc-a3" value="0">
+  <label>Aide en % de la dépense (ex. prise en charge 60 %) — laissez 0 si aucune</label><input type="number" id="rc-pct" value="0" min="0" max="100">
+  <div class="actions"><button class="btn" onclick="calcResteACharge()">Calculer mon reste à charge</button></div>`,
+},
+retraite: {
+  titre:"Simulateur de retraite simplifié", ref:"RÉFORME 2023 · RÉGIME GÉNÉRAL",
+  corps:`<div class="deux"><div><label>Année de naissance</label><input type="number" id="ret-naiss" value="1970" min="1950" max="2010"></div>
+  <div><label>Trimestres déjà validés</label><input type="number" id="ret-trim" value="120" min="0" max="200"></div></div>
+  <label>Salaire annuel brut moyen estimé de vos 25 meilleures années (€)</label><input type="number" id="ret-sal" value="32000">
+  <div class="actions"><button class="btn" onclick="calcRetraite()">Simuler</button></div>`,
+},
+
+/* ───────── 02. IMPÔTS ───────── */
+impotRevenu: {
+  titre:"Estimation de l'impôt sur le revenu", ref:"BARÈME 2026 (REVENUS 2025) · LOI DE FINANCES DU 19/02/2026",
+  corps:`<label>Votre situation</label>
+  <select id="ir-sit"><option value="seul">Célibataire / divorcé / veuf</option><option value="couple">Marié / pacsé (imposition commune)</option></select>
+  <div class="deux"><div><label>Enfants à charge</label><input type="number" id="ir-enf" value="0" min="0"></div>
+  <div><label>Revenu annuel net imposable du foyer (€)</label><input type="number" id="ir-rev" value="30000"></div></div>
+  <label><input type="checkbox" id="ir-abat" checked style="width:auto;margin-right:8px">Appliquer l'abattement de 10 % (salaires et pensions)</label>
+  <div class="actions"><button class="btn" onclick="calcImpotRevenu()">Estimer mon impôt</button></div>`,
+},
+tva: {
+  titre:"Calculateur de TVA", ref:"TAUX EN VIGUEUR · ART. 278 CGI",
+  corps:`<div class="deux"><div><label>Montant (€)</label><input type="number" id="tva-m" value="100"></div>
+  <div><label>Ce montant est</label><select id="tva-sens"><option value="ht">Hors taxes (HT)</option><option value="ttc">Toutes taxes (TTC)</option></select></div></div>
+  <label>Taux de TVA</label>
+  <select id="tva-taux"><option value="20">20 % — taux normal</option><option value="10">10 % — restauration, travaux, transport</option><option value="5.5">5,5 % — alimentaire, livres, énergie, rénovation énergétique</option><option value="2.1">2,1 % — médicaments remboursés, presse</option></select>
+  <div class="actions"><button class="btn" onclick="calcTVA()">Calculer</button></div>`,
+},
+plusValue: {
+  titre:"Plus-value immobilière", ref:"19 % IR + 17,2 % PS · ABATTEMENTS ART. 150 VC CGI",
+  corps:`<div class="deux"><div><label>Prix d'achat (€)</label><input type="number" id="pv-achat" value="200000"></div>
+  <div><label>Prix de vente (€)</label><input type="number" id="pv-vente" value="300000"></div></div>
+  <div class="deux"><div><label>Années de détention</label><input type="number" id="pv-annees" value="10" min="0" max="40"></div>
+  <div><label>Résidence principale ?</label><select id="pv-rp"><option value="non">Non</option><option value="oui">Oui</option></select></div></div>
+  <label><input type="checkbox" id="pv-forfaits" checked style="width:auto;margin-right:8px">Appliquer les forfaits (7,5 % frais d'acquisition + 15 % travaux si détention &gt; 5 ans)</label>
+  <div class="actions"><button class="btn" onclick="calcPlusValue()">Simuler</button></div>`,
+},
+tranches: {
+  titre:"Vérification des tranches d'imposition", ref:"BARÈME 2026 PAR PART DE QUOTIENT FAMILIAL",
+  corps:`<div class="deux"><div><label>Revenu net imposable annuel (€)</label><input type="number" id="tr-rev" value="35000"></div>
+  <div><label>Nombre de parts fiscales</label><input type="number" id="tr-parts" value="1" min="0.5" step="0.25"></div></div>
+  <div class="actions"><button class="btn" onclick="calcTranches()">Voir ma tranche</button></div>`,
+},
+calendrierFiscal: {
+  titre:"Calendrier fiscal personnalisé", ref:"ÉCHÉANCES 2026 · DGFIP",
+  corps:`<label>Cochez ce qui vous concerne</label>
+  <label><input type="checkbox" id="cf-salarie" checked style="width:auto;margin-right:8px">Salarié / retraité (déclaration de revenus)</label>
+  <label><input type="checkbox" id="cf-proprio" style="width:auto;margin-right:8px">Propriétaire d'un bien immobilier</label>
+  <label><input type="checkbox" id="cf-micro" style="width:auto;margin-right:8px">Micro-entrepreneur</label>
+  <label><input type="checkbox" id="cf-ifi" style="width:auto;margin-right:8px">Patrimoine immobilier &gt; 1,3 M€ (IFI)</label>
+  <div class="actions"><button class="btn" onclick="calcCalendrierFiscal()">Générer mon calendrier</button></div>`,
+},
+
+/* ───────── 03. TRAVAIL ───────── */
+brutNet: {
+  titre:"Conversion salaire brut ↔ net", ref:"TAUX MOYENS DE COTISATIONS SALARIALES 2026",
+  corps:`<div class="deux"><div><label>Montant (€)</label><input type="number" id="bn-m" value="2500"></div>
+  <div><label>Ce montant est</label><select id="bn-sens"><option value="brut">Brut</option><option value="net">Net</option></select></div></div>
+  <div class="deux"><div><label>Période</label><select id="bn-per"><option value="mois">Mensuel</option><option value="an">Annuel</option><option value="heure">Horaire</option></select></div>
+  <div><label>Statut</label><select id="bn-statut"><option value="0.22">Salarié non-cadre (~22 %)</option><option value="0.25">Salarié cadre (~25 %)</option><option value="0.16">Fonction publique (~16 %)</option></select></div></div>
+  <div class="actions"><button class="btn" onclick="calcBrutNet()">Convertir</button></div>`,
+},
+licenciement: {
+  titre:"Indemnité légale de licenciement", ref:"ART. R1234-2 CODE DU TRAVAIL · MINIMUM LÉGAL",
+  corps:`<div class="deux"><div><label>Salaire brut mensuel de référence (€)</label><input type="number" id="lic-sal" value="2500"></div>
+  <div><label>Ancienneté (années)</label><input type="number" id="lic-annees" value="8" min="0" step="0.25"></div></div>
+  <p style="font-size:13px;color:var(--encre-claire);margin-top:8px">Salaire de référence : le plus favorable entre la moyenne des 12 derniers mois et celle des 3 derniers mois (primes au prorata).</p>
+  <div class="actions"><button class="btn" onclick="calcLicenciement()">Calculer</button></div>`,
+},
+congesPayes: {
+  titre:"Congés payés restants", ref:"2,5 JOURS OUVRABLES PAR MOIS · ART. L3141-3",
+  corps:`<div class="deux"><div><label>Mois travaillés sur la période d'acquisition</label><input type="number" id="cp-mois" value="12" min="0" max="12"></div>
+  <div><label>Jours déjà pris</label><input type="number" id="cp-pris" value="10" min="0"></div></div>
+  <label>Report de la période précédente (jours)</label><input type="number" id="cp-report" value="0" min="0">
+  <div class="actions"><button class="btn" onclick="calcCongesPayes()">Calculer</button></div>`,
+},
+preavis: {
+  titre:"Simulateur de préavis", ref:"DURÉES LÉGALES USUELLES · LA CONVENTION COLLECTIVE PRIME",
+  corps:`<label>Type de rupture</label>
+  <select id="pr-type"><option value="demission">Démission</option><option value="licenciement">Licenciement (hors faute grave/lourde)</option><option value="retraite">Départ à la retraite</option></select>
+  <div class="deux"><div><label>Statut</label><select id="pr-statut"><option value="ouvrier">Ouvrier / employé</option><option value="agent">Agent de maîtrise / technicien</option><option value="cadre">Cadre</option></select></div>
+  <div><label>Ancienneté</label><select id="pr-anc"><option value="0">Moins de 6 mois</option><option value="1">6 mois à 2 ans</option><option value="2">2 ans et plus</option></select></div></div>
+  <div class="actions"><button class="btn" onclick="calcPreavis()">Voir mon préavis</button></div>`,
+},
+chomage: {
+  titre:"Estimation des allocations chômage (ARE)", ref:"FORMULE FRANCE TRAVAIL · ESTIMATION INDICATIVE",
+  corps:`<div class="deux"><div><label>Salaire brut mensuel moyen des 24 derniers mois (€)</label><input type="number" id="ch-sal" value="2400"></div>
+  <div><label>Votre âge</label><input type="number" id="ch-age" value="35" min="16" max="70"></div></div>
+  <div class="actions"><button class="btn" onclick="calcChomage()">Estimer mon ARE</button></div>`,
+},
+
+/* ───────── 04. LOGEMENT ───────── */
+encadrementLoyers: {
+  titre:"Encadrement des loyers", ref:"LOI ELAN · ZONES EN VIGUEUR 2026",
+  corps:`<label>Votre commune</label><input type="text" id="el-ville" placeholder="Ex. : Paris, Lyon, Bordeaux…">
+  <div class="actions"><button class="btn" onclick="calcEncadrement()">Vérifier</button></div>`,
+},
+depotGarantie: {
+  titre:"Dépôt de garantie", ref:"LOI DU 6 JUILLET 1989 · ART. 22",
+  corps:`<div class="deux"><div><label>Loyer mensuel hors charges (€)</label><input type="number" id="dg-loyer" value="700"></div>
+  <div><label>Type de location</label><select id="dg-type"><option value="vide">Logement vide</option><option value="meuble">Logement meublé</option></select></div></div>
+  <div class="actions"><button class="btn" onclick="calcDepotGarantie()">Calculer</button></div>`,
+},
+fraisNotaire: {
+  titre:"Frais de notaire (frais d'acquisition)", ref:"ÉMOLUMENTS 2026 + DROITS DE MUTATION",
+  corps:`<div class="deux"><div><label>Prix du bien (€)</label><input type="number" id="fn-prix" value="250000"></div>
+  <div><label>Type de bien</label><select id="fn-type"><option value="ancien">Ancien</option><option value="neuf">Neuf (VEFA)</option></select></div></div>
+  <label><input type="checkbox" id="fn-majore" checked style="width:auto;margin-right:8px">Département ayant voté la majoration des droits (+0,5 pt, cas le plus fréquent 2025-2028)</label>
+  <div class="actions"><button class="btn" onclick="calcFraisNotaire()">Estimer</button></div>`,
+},
+aidesRenovation: {
+  titre:"Aides à la rénovation énergétique", ref:"MAPRIMERÉNOV' · CEE · ÉCO-PTZ — ÉLIGIBILITÉ INDICATIVE",
+  corps:`<label>Vous êtes</label>
+  <select id="ar-statut"><option value="proprio-occ">Propriétaire occupant</option><option value="proprio-bail">Propriétaire bailleur</option><option value="locataire">Locataire</option></select>
+  <div class="deux"><div><label>Âge du logement</label><select id="ar-age"><option value="15">Plus de 15 ans</option><option value="2">2 à 15 ans</option><option value="0">Moins de 2 ans</option></select></div>
+  <div><label>Revenu fiscal de référence du foyer (€/an)</label><input type="number" id="ar-rfr" value="30000"></div></div>
+  <div class="deux"><div><label>Personnes dans le foyer</label><input type="number" id="ar-pers" value="2" min="1"></div>
+  <div><label>Région</label><select id="ar-idf"><option value="province">Hors Île-de-France</option><option value="idf">Île-de-France</option></select></div></div>
+  <div class="actions"><button class="btn" onclick="calcAidesRenovation()">Vérifier mon éligibilité</button></div>`,
+},
+lettresLogement: {
+  titre:"Lettres propriétaire / locataire", ref:"MODÈLES CONFORMES LOI DU 6 JUILLET 1989",
+  corps:`<label>Modèle de lettre</label>
+  <select id="ll-type"><option value="conge">Congé donné par le locataire (préavis)</option><option value="depot">Demande de restitution du dépôt de garantie</option><option value="travaux">Demande de travaux au propriétaire</option><option value="quittance">Demande de quittance de loyer</option></select>
+  <div class="deux"><div><label>Vos nom et prénom</label><input type="text" id="ll-nom" placeholder="Prénom NOM"></div>
+  <div><label>Votre adresse (logement concerné)</label><input type="text" id="ll-adresse" placeholder="N°, rue, CP, ville"></div></div>
+  <div class="deux"><div><label>Nom du destinataire</label><input type="text" id="ll-dest" placeholder="Propriétaire / agence"></div>
+  <div><label>Précision (date de départ, montant, travaux…)</label><input type="text" id="ll-detail" placeholder="Ex. : départ le 30/09/2026"></div></div>
+  <div class="actions"><button class="btn" onclick="genLettreLogement()">Générer la lettre</button></div>`,
+},
+
+/* ───────── 05. INDÉPENDANTS ───────── */
+cotisations: {
+  titre:"Cotisations sociales micro-entrepreneur", ref:"TAUX URSSAF 2026",
+  corps:`<div class="deux"><div><label>Chiffre d'affaires (€)</label><input type="number" id="cot-ca" value="3000"></div>
+  <div><label>Activité</label><select id="cot-act"><option value="vente">Vente de marchandises (12,3 %)</option><option value="serviceBIC">Prestations de services BIC (21,2 %)</option><option value="bnc">Professions libérales BNC (25,6 %)</option><option value="cipav">Libéral CIPAV (23,2 %)</option></select></div></div>
+  <label><input type="checkbox" id="cot-acre" style="width:auto;margin-right:8px">Je bénéficie de l'ACRE (−50 % la 1re année)</label>
+  <div class="actions"><button class="btn" onclick="calcCotisations()">Calculer</button></div>`,
+},
+plafondCA: {
+  titre:"CA restant avant plafond", ref:"PLAFONDS 2026-2028 · LF 2026",
+  corps:`<div class="deux"><div><label>CA encaissé depuis le 1er janvier (€)</label><input type="number" id="pl-ca" value="25000"></div>
+  <div><label>Activité</label><select id="pl-act"><option value="vente">Vente / hébergement (plafond 203 100 €)</option><option value="service">Services / libéral (plafond 83 600 €)</option></select></div></div>
+  <div class="actions"><button class="btn" onclick="calcPlafondCA()">Vérifier</button></div>`,
+},
+facture: {
+  titre:"Génération de facture conforme", ref:"MENTIONS OBLIGATOIRES · ART. L441-9 CODE DE COMMERCE",
+  corps:`<div class="deux"><div><label>Votre nom / raison sociale</label><input type="text" id="fa-nom" placeholder="Prénom NOM EI"></div>
+  <div><label>Votre SIRET</label><input type="text" id="fa-siret" placeholder="123 456 789 00012"></div></div>
+  <div class="deux"><div><label>Votre adresse</label><input type="text" id="fa-adresse" placeholder="N°, rue, CP, ville"></div>
+  <div><label>N° de facture</label><input type="text" id="fa-num" placeholder="2026-001"></div></div>
+  <div class="deux"><div><label>Client (nom + adresse)</label><input type="text" id="fa-client" placeholder="Société X, adresse"></div>
+  <div><label>Date de la prestation / vente</label><input type="text" id="fa-date" placeholder="JJ/MM/AAAA"></div></div>
+  <label>Description de la prestation</label><input type="text" id="fa-desc" placeholder="Ex. : création d'un site internet vitrine">
+  <div class="deux"><div><label>Montant (€)</label><input type="number" id="fa-montant" value="500"></div>
+  <div><label>Régime TVA</label><select id="fa-tva"><option value="franchise">Franchise en base (pas de TVA)</option><option value="20">TVA 20 %</option><option value="10">TVA 10 %</option></select></div></div>
+  <div class="actions"><button class="btn" onclick="genFacture()">Générer la facture</button></div>`,
+},
+revenusNets: {
+  titre:"Simulateur de revenus nets", ref:"COTISATIONS + IMPÔT · MICRO-ENTREPRISE 2026",
+  corps:`<div class="deux"><div><label>CA annuel estimé (€)</label><input type="number" id="rn-ca" value="40000"></div>
+  <div><label>Activité</label><select id="rn-act"><option value="vente">Vente (12,3 % / abattement 71 %)</option><option value="serviceBIC">Services BIC (21,2 % / abattement 50 %)</option><option value="bnc">Libéral BNC (25,6 % / abattement 34 %)</option></select></div></div>
+  <label>Imposition</label>
+  <select id="rn-impot"><option value="vl">Versement libératoire</option><option value="bareme">Barème classique (TMI 11 %)</option><option value="bareme30">Barème classique (TMI 30 %)</option><option value="aucun">Non imposable / ignorer l'impôt</option></select>
+  <div class="actions"><button class="btn" onclick="calcRevenusNets()">Simuler</button></div>`,
+},
+calendrierDeclarations: {
+  titre:"Calendrier des déclarations URSSAF", ref:"AUTOENTREPRENEUR.URSSAF.FR",
+  corps:`<label>Rythme de déclaration choisi</label>
+  <select id="cd-rythme"><option value="mensuel">Mensuel</option><option value="trimestriel">Trimestriel</option></select>
+  <div class="actions"><button class="btn" onclick="calcCalendrierDeclarations()">Voir mes échéances</button></div>`,
+},
+
+/* ───────── 06. DOCUMENTS ───────── */
+lettreResiliation: {
+  titre:"Lettre de résiliation", ref:"MODÈLE UNIVERSEL · LRAR RECOMMANDÉE",
+  corps:`<label>Type de contrat</label>
+  <select id="lr-type"><option value="abonnement">Abonnement (internet, mobile, streaming, presse)</option><option value="assurance">Assurance (loi Hamon / Chatel)</option><option value="salle">Salle de sport</option><option value="energie">Fournisseur d'énergie</option></select>
+  <div class="deux"><div><label>Vos nom et prénom</label><input type="text" id="lr-nom" placeholder="Prénom NOM"></div>
+  <div><label>Votre adresse</label><input type="text" id="lr-adresse" placeholder="N°, rue, CP, ville"></div></div>
+  <div class="deux"><div><label>Organisme destinataire</label><input type="text" id="lr-dest" placeholder="Nom de l'opérateur / assureur"></div>
+  <div><label>N° de contrat / client</label><input type="text" id="lr-contrat" placeholder="Référence"></div></div>
+  <div class="actions"><button class="btn" onclick="genResiliation()">Générer la lettre</button></div>`,
+},
+attestationHonneur: {
+  titre:"Attestation sur l'honneur", ref:"ART. 441-7 CODE PÉNAL (FAUSSE DÉCLARATION)",
+  corps:`<div class="deux"><div><label>Vos nom et prénom</label><input type="text" id="ah-nom" placeholder="Prénom NOM"></div>
+  <div><label>Né(e) le</label><input type="text" id="ah-naiss" placeholder="JJ/MM/AAAA à Ville"></div></div>
+  <label>Votre adresse</label><input type="text" id="ah-adresse" placeholder="N°, rue, CP, ville">
+  <label>Ce que vous attestez</label><input type="text" id="ah-objet" placeholder="Ex. : héberger M. Jean Dupont à mon domicile depuis le 01/01/2026">
+  <div class="actions"><button class="btn" onclick="genAttestation()">Générer l'attestation</button></div>`,
+},
+miseEnDemeure: {
+  titre:"Mise en demeure", ref:"ART. 1344 CODE CIVIL · DERNIÈRE ÉTAPE AMIABLE",
+  corps:`<div class="deux"><div><label>Vos nom et prénom</label><input type="text" id="md-nom" placeholder="Prénom NOM"></div>
+  <div><label>Votre adresse</label><input type="text" id="md-adresse" placeholder="N°, rue, CP, ville"></div></div>
+  <div class="deux"><div><label>Destinataire (nom + adresse)</label><input type="text" id="md-dest" placeholder="Société / personne, adresse"></div>
+  <div><label>Délai accordé (jours)</label><input type="number" id="md-delai" value="15"></div></div>
+  <label>Ce que vous exigez</label><input type="text" id="md-objet" placeholder="Ex. : le remboursement de 350 € pour la commande n°1234 non livrée">
+  <label>Rappel des faits (dates, échanges précédents)</label><textarea id="md-faits" rows="3" placeholder="Ex. : commande passée le 02/05/2026, relances par email les 20/05 et 01/06 restées sans réponse."></textarea>
+  <div class="actions"><button class="btn" onclick="genMiseEnDemeure()">Générer la mise en demeure</button></div>`,
+},
+demandeRemboursement: {
+  titre:"Demande de remboursement", ref:"GARANTIE LÉGALE DE CONFORMITÉ · ART. L217-3 CODE CONSO",
+  corps:`<div class="deux"><div><label>Vos nom et prénom</label><input type="text" id="dr-nom" placeholder="Prénom NOM"></div>
+  <div><label>Votre adresse</label><input type="text" id="dr-adresse" placeholder="N°, rue, CP, ville"></div></div>
+  <div class="deux"><div><label>Vendeur / organisme</label><input type="text" id="dr-dest" placeholder="Nom + adresse"></div>
+  <div><label>Montant réclamé (€)</label><input type="number" id="dr-montant" value="0"></div></div>
+  <label>Motif</label>
+  <select id="dr-motif"><option value="defectueux">Produit défectueux / non conforme</option><option value="nonlivre">Commande non livrée</option><option value="annule">Prestation annulée</option><option value="troppercu">Trop-perçu / double prélèvement</option></select>
+  <label>Référence (commande, facture, date d'achat)</label><input type="text" id="dr-ref" placeholder="Ex. : commande n°1234 du 02/05/2026">
+  <div class="actions"><button class="btn" onclick="genRemboursement()">Générer la demande</button></div>`,
+},
+procuration: {
+  titre:"Procuration simple", ref:"MANDAT DE DROIT COMMUN · ART. 1984 CODE CIVIL",
+  corps:`<div class="deux"><div><label>Vous (mandant) — nom, prénom</label><input type="text" id="pc-mandant" placeholder="Prénom NOM"></div>
+  <div><label>Né(e) le</label><input type="text" id="pc-naiss1" placeholder="JJ/MM/AAAA à Ville"></div></div>
+  <label>Votre adresse</label><input type="text" id="pc-adresse1" placeholder="N°, rue, CP, ville">
+  <div class="deux"><div><label>Personne mandatée — nom, prénom</label><input type="text" id="pc-mandataire" placeholder="Prénom NOM"></div>
+  <div><label>Né(e) le</label><input type="text" id="pc-naiss2" placeholder="JJ/MM/AAAA à Ville"></div></div>
+  <label>Pour effectuer la démarche suivante</label><input type="text" id="pc-objet" placeholder="Ex. : retirer un colis recommandé à La Poste de…">
+  <label>Validité jusqu'au</label><input type="text" id="pc-fin" placeholder="JJ/MM/AAAA (ou laisser vide : démarche ponctuelle)">
+  <div class="actions"><button class="btn" onclick="genProcuration()">Générer la procuration</button></div>`,
+}
+};
+</script>
+
+<script>
+/* ════════ FONCTIONS DE CALCUL ════════ */
+
+/* ── 01. Aides sociales ── */
+function calcAidesSociales(){
+  const couple = t('as-sit')==='couple', enf = v('as-enf'), rev = v('as-rev'), autres = v('as-autres');
+  const ressources = rev + autres;
+  let res = '';
+  // RSA : montant forfaitaire selon foyer
+  let forfaitRSA = B.rsa;
+  if(couple) forfaitRSA *= 1.5;
+  forfaitRSA += enf * B.rsa * (enf<=2 ? .3 : .3) ; // 30% par enfant (40% à partir du 3e)
+  if(enf>=3) forfaitRSA += (enf-2) * B.rsa * .1;
+  const rsaEstime = Math.max(0, forfaitRSA - ressources - (rev>0 ? 0 : 0));
+  if(rev===0 && rsaEstime>1){
+    res += `<div class="ligne"><span>RSA estimé (sans activité)</span><span>${eur(rsaEstime)} /mois</span></div>`;
+  } else if(rev>0){
+    res += `<div class="ligne"><span>RSA</span><span>Probablement remplacé par la prime d'activité</span></div>`;
+  } else {
+    res += `<div class="ligne"><span>RSA</span><span>Ressources au-dessus du plafond</span></div>`;
+  }
+  // Prime d'activité si revenus d'activité
+  if(rev>0){
+    let forfaitPA = B.primeActiviteForfait * (couple?1.5:1) + enf*B.primeActiviteForfait*.3;
+    const bonif = rev >= 0.5*B.smicMensuelNet ? Math.min(B.bonifMax, B.bonifMax*(rev-0.5*B.smicMensuelNet)/(0.5*B.smicMensuelNet)) : 0;
+    const pa = Math.max(0, forfaitPA + 0.61*rev + bonif - ressources);
+    if(pa>15) res += `<div class="ligne"><span>Prime d'activité estimée</span><span>≈ ${eur(Math.round(pa))} /mois</span></div>`;
+    else res += `<div class="ligne"><span>Prime d'activité</span><span>Revenus probablement trop élevés</span></div>`;
+  }
+  // AAH
+  if(document.getElementById('as-handicap').checked){
+    const aah = Math.max(0, B.aah - autres - rev*0.2);
+    res += `<div class="ligne"><span>AAH possible (selon décision CDAPH)</span><span>jusqu'à ${eur(B.aah)} /mois</span></div>`;
+  }
+  res += `<p class="note">Estimation très simplifiée : le calcul réel intègre le forfait logement, les ressources trimestrielles exactes et la composition précise du foyer. Faites la simulation officielle complète sur <a href="https://www.mesdroitssociaux.gouv.fr" target="_blank" rel="noopener">mesdroitssociaux.gouv.fr</a> (toutes les aides en une fois) ou <a href="https://www.caf.fr" target="_blank" rel="noopener">caf.fr</a>.</p>`;
+  montrer('aidesSociales', res, 'Estimation indicative');
+}
+
+/* ── Aides au logement ── */
+function calcAidesLogement(){
+  const statut = t('al-statut'), cond = t('al-cond'), rev = v('al-rev'), loyer = v('al-loyer');
+  let html = '';
+  if(statut==='proprio'){
+    html = `<div class="gros">Non éligible</div><p class="note">Les propriétaires occupants sans prêt conventionné ancien ne peuvent pas percevoir d'aide au logement.</p>`;
+  } else if(statut==='heberge'){
+    html = `<div class="gros">Non éligible</div><p class="note">Les personnes hébergées gratuitement ne paient pas de loyer : aucune aide au logement n'est possible. En revanche, d'autres aides (RSA, prime d'activité) restent ouvertes.</p>`;
+  } else if(cond==='non'){
+    html = `<div class="gros">Éligibilité incertaine</div><p class="note">L'aide exige un logement décent, occupé en résidence principale (au moins 8 mois/an), et non loué auprès d'un ascendant ou descendant direct. Vérifiez ces conditions.</p>`;
+  } else {
+    const probable = rev < 2200 + (loyer*0.5);
+    html = `<div class="gros">${probable ? 'Éligibilité probable ✓' : 'Éligibilité possible mais incertaine'}</div>
+    <div class="ligne"><span>Statut</span><span>Compatible avec les aides au logement</span></div>
+    <div class="ligne"><span>À noter</span><span>Montants des APL gelés en 2026 (pas de revalorisation)</span></div>
+    <p class="note">Le montant exact dépend de la zone géographique, du loyer plafond et des ressources des 12 derniers mois (actualisées tous les 3 mois). Seul le simulateur officiel donne un montant fiable : <a href="https://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation" target="_blank" rel="noopener">simulateur CAF</a>.</p>`;
+  }
+  montrer('aidesLogement', html, 'Vérification');
+}
+
+/* ── Prime d'activité ── */
+function calcPrimeActivite(){
+  const couple = t('pa-sit')==='couple', enf = v('pa-enf');
+  const rev = v('pa-rev'), revc = couple ? v('pa-revc') : 0, autres = v('pa-autres');
+  const revAct = rev + revc, ressources = revAct + autres;
+  let forfait = B.primeActiviteForfait * (couple ? 1.5 : 1);
+  forfait += enf * B.primeActiviteForfait * (enf<=2 ? .3 : .3);
+  if(enf>=3) forfait += (enf-2)*B.primeActiviteForfait*.1;
+  // bonification par membre actif
+  function bonif(r){
+    if(r < 0.5*B.smicMensuelNet) return 0;
+    if(r >= B.smicMensuelNet) return B.bonifMax;
+    return B.bonifMax * (r - 0.5*B.smicMensuelNet)/(0.5*B.smicMensuelNet);
+  }
+  const totalBonif = bonif(rev) + bonif(revc);
+  const montant = forfait + 0.61*revAct + totalBonif - ressources;
+  const pa = montant >= 15 ? Math.round(montant) : 0;
+  let html = pa>0
+    ? `<div class="gros">≈ ${eur(pa)} / mois</div>
+       <div class="ligne"><span>Montant forfaitaire foyer</span><span>${eur(Math.round(forfait))}</span></div>
+       <div class="ligne"><span>+ 61 % des revenus d'activité</span><span>${eur(Math.round(0.61*revAct))}</span></div>
+       <div class="ligne"><span>+ Bonification individuelle (max 240,63 €/actif)</span><span>${eur(Math.round(totalBonif))}</span></div>
+       <div class="ligne"><span>− Ressources du foyer</span><span>${eur(ressources)}</span></div>`
+    : `<div class="gros">Probablement non éligible</div><p>Vos ressources dépassent vraisemblablement le plafond, ou le montant calculé est inférieur au seuil de versement (15 €).</p>`;
+  html += `<p class="note">Estimation hors forfait logement (qui réduit le montant si vous percevez une aide au logement ou êtes logé gratuitement). Bonification fortement revalorisée au 1er avril 2026 (+50 €/mois en moyenne). Simulation officielle : <a href="https://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation" target="_blank" rel="noopener">caf.fr</a>.</p>`;
+  montrer('primeActivite', html, 'Estimation avril 2026');
+}
+
+/* ── Reste à charge ── */
+function calcResteACharge(){
+  const dep = v('rc-dep');
+  const aidesFixes = v('rc-a1')+v('rc-a2')+v('rc-a3');
+  const aidePct = dep * v('rc-pct')/100;
+  const totalAides = Math.min(dep, aidesFixes + aidePct);
+  const reste = Math.max(0, dep - totalAides);
+  montrer('resteACharge',
+    `<div class="gros">${eur(reste)}</div>
+     <div class="ligne"><span>Dépense totale</span><span>${eur(dep)}</span></div>
+     <div class="ligne"><span>Total des aides</span><span>− ${eur(totalAides)}</span></div>
+     <div class="ligne"><span>Taux de prise en charge</span><span>${dep>0 ? fmt(Math.round(totalAides/dep*100)) : 0} %</span></div>
+     <p class="note">Vérifiez que vos aides sont bien cumulables entre elles : certains dispositifs s'excluent ou sont plafonnés en cumul (ex. : écrêtement à 90 % de la dépense pour MaPrimeRénov' + CEE).</p>`,
+    'Reste à charge');
+}
+
+/* ── Retraite ── */
+function calcRetraite(){
+  const naiss = v('ret-naiss'), trim = v('ret-trim'), sal = v('ret-sal');
+  let ageLegal, trimRequis;
+  if(naiss < 1961){ ageLegal = 62; trimRequis = 168; }
+  else if(naiss <= 1967){
+    const table = {1961:[62.25,169],1962:[62.5,169],1963:[62.75,170],1964:[63,171],1965:[63.25,172],1966:[63.5,172],1967:[63.75,172]};
+    [ageLegal, trimRequis] = table[naiss] || [64,172];
+    if(naiss===1961) [ageLegal,trimRequis]=[62.5,169]; // simplification générations transitoires
+  } else { ageLegal = 64; trimRequis = 172; }
+  const tauxPlein = trim >= trimRequis;
+  const proratis = Math.min(1, trim/trimRequis);
+  const pensionPleine = sal * 0.5 * proratis / 12;
+  const manquants = Math.max(0, trimRequis - trim);
+  let html = `<div class="ligne"><span>Âge légal de départ (génération ${naiss})</span><span>${fmt(ageLegal)} ans</span></div>
+  <div class="ligne"><span>Trimestres requis pour le taux plein</span><span>${trimRequis}</span></div>
+  <div class="ligne"><span>Trimestres validés / manquants</span><span>${trim} / ${manquants} manquants</span></div>
+  <div class="ligne"><span>Âge du taux plein automatique</span><span>67 ans</span></div>
+  <div class="ligne"><span>Pension de base estimée (régime général, si taux plein)</span><span>≈ ${eur(Math.round(pensionPleine))} brut/mois</span></div>`;
+  html += `<p class="note">Estimation du seul régime de base (50 % du salaire annuel moyen des 25 meilleures années, plafonné au PASS, proratisé). Votre retraite complémentaire (Agirc-Arrco) s'y ajoute — souvent 25 à 60 % de plus pour un salarié du privé. Pour un calcul réel avec vos données, utilisez le simulateur officiel M@rel sur <a href="https://www.info-retraite.fr" target="_blank" rel="noopener">info-retraite.fr</a>.</p>`;
+  montrer('retraite', html, tauxPlein ? 'Taux plein atteint' : 'Simulation');
+}
+
+/* ── 02. Impôt sur le revenu ── */
+function calcImpotRevenu(){
+  const couple = t('ir-sit')==='couple', enf = v('ir-enf');
+  let revenu = v('ir-rev');
+  if(document.getElementById('ir-abat').checked){
+    const abat = Math.min(B.abattementMax, Math.max(B.abattementMin, revenu*0.1));
+    revenu = Math.max(0, revenu - abat);
+  }
+  let parts = couple ? 2 : 1;
+  parts += enf<=2 ? enf*0.5 : 1 + (enf-2);
+  const r = calculIR(revenu, parts, couple);
+  const tauxMoyen = v('ir-rev')>0 ? (r.impot / v('ir-rev') * 100) : 0;
+  montrer('impotRevenu',
+    `<div class="gros">${eur(r.impot)} / an</div>
+     <div class="ligne"><span>Revenu imposable après abattement</span><span>${eur(revenu)}</span></div>
+     <div class="ligne"><span>Nombre de parts</span><span>${fmt(parts)}</span></div>
+     <div class="ligne"><span>Impôt avant décote</span><span>${eur(r.brut)}</span></div>
+     <div class="ligne"><span>Décote appliquée</span><span>− ${eur(r.decote)}</span></div>
+     <div class="ligne"><span>Taux marginal (TMI)</span><span>${fmt(r.tmi*100)} %</span></div>
+     <div class="ligne"><span>Taux moyen</span><span>${fmt(Math.round(tauxMoyen*10)/10)} %</span></div>
+     <p class="note">Barème 2026 sur les revenus 2025 (LF du 19 février 2026, tranches revalorisées de 0,9 %). Hors réductions et crédits d'impôt, hors plafonnement du quotient familial pour les hauts revenus. Simulateur officiel complet : <a href="https://www.impots.gouv.fr/simulateurs" target="_blank" rel="noopener">impots.gouv.fr</a>.</p>`,
+    'Barème LF 2026');
+}
+
+/* ── TVA ── */
+function calcTVA(){
+  const m = v('tva-m'), taux = parseFloat(t('tva-taux'))/100, sens = t('tva-sens');
+  let ht, ttc;
+  if(sens==='ht'){ ht = m; ttc = m*(1+taux); } else { ttc = m; ht = m/(1+taux); }
+  montrer('tva',
+    `<div class="ligne"><span>Montant HT</span><span>${eur(ht)}</span></div>
+     <div class="ligne"><span>TVA (${fmt(taux*100)} %)</span><span>${eur(ttc-ht)}</span></div>
+     <div class="ligne"><span><b>Montant TTC</b></span><span><b>${eur(ttc)}</b></span></div>`,
+    'TVA '+t('tva-taux')+' %');
+}
+
+/* ── Plus-value immobilière ── */
+function calcPlusValue(){
+  if(t('pv-rp')==='oui'){
+    montrer('plusValue', `<div class="gros">0 € — Exonération totale</div><p class="note">La vente de la résidence principale est totalement exonérée d'impôt sur la plus-value et de prélèvements sociaux (art. 150 U II-1° CGI).</p>`, 'Exonéré');
+    return;
+  }
+  let achat = v('pv-achat'); const vente = v('pv-vente'), annees = v('pv-annees');
+  if(document.getElementById('pv-forfaits').checked){
+    achat = achat*1.075 + (annees>5 ? v('pv-achat')*0.15 : 0);
+  }
+  const pv = Math.max(0, vente - achat);
+  // Abattements IR : 6%/an de la 6e à la 21e année, 4% la 22e → exonération 22 ans
+  let abIR = 0;
+  if(annees>5) abIR = Math.min(16, annees-5)*6 + (annees>=22?4:0);
+  abIR = Math.min(100, abIR);
+  // Abattements PS : 1,65%/an 6-21e, 1,60% 22e, 9%/an 23-30e → exonération 30 ans
+  let abPS = 0;
+  if(annees>5) abPS = Math.min(16, annees-5)*1.65 + (annees>=22?1.6:0) + Math.max(0, Math.min(8, annees-22))*9;
+  abPS = Math.min(100, abPS);
+  const baseIR = pv*(1-abIR/100), basePS = pv*(1-abPS/100);
+  const ir = baseIR*0.19, ps = basePS*0.172;
+  let surtaxe = 0;
+  if(baseIR > 50000) surtaxe = baseIR * (baseIR<=100000 ? 0.02 : baseIR<=150000 ? 0.03 : baseIR<=200000 ? 0.04 : baseIR<=250000 ? 0.05 : 0.06);
+  const total = ir+ps+surtaxe;
+  montrer('plusValue',
+    `<div class="gros">≈ ${eur(Math.round(total))} de taxes</div>
+     <div class="ligne"><span>Plus-value brute (après forfaits)</span><span>${eur(Math.round(pv))}</span></div>
+     <div class="ligne"><span>Abattement durée — impôt (${fmt(abIR)} %)</span><span>base : ${eur(Math.round(baseIR))}</span></div>
+     <div class="ligne"><span>Impôt sur le revenu (19 %)</span><span>${eur(Math.round(ir))}</span></div>
+     <div class="ligne"><span>Abattement durée — prélèv. sociaux (${fmt(Math.round(abPS*10)/10)} %)</span><span>base : ${eur(Math.round(basePS))}</span></div>
+     <div class="ligne"><span>Prélèvements sociaux (17,2 %)</span><span>${eur(Math.round(ps))}</span></div>
+     ${surtaxe>0?`<div class="ligne"><span>Surtaxe plus-value élevée (indicative)</span><span>${eur(Math.round(surtaxe))}</span></div>`:''}
+     <div class="ligne"><span><b>Net vendeur estimé</b></span><span><b>${eur(Math.round(vente-total))}</b></span></div>
+     <p class="note">Exonération totale d'impôt après 22 ans de détention, de prélèvements sociaux après 30 ans. Calcul simplifié : le notaire établit le calcul exact lors de la vente. Détails : <a href="https://www.service-public.fr/particuliers/vosdroits/F10864" target="_blank" rel="noopener">service-public.fr</a>.</p>`,
+    'Simulation');
+}
+
+/* ── Tranches ── */
+function calcTranches(){
+  const rev = v('tr-rev'), parts = v('tr-parts')||1;
+  const qf = rev/parts;
+  const bornes = [[0,11600,'0 %'],[11600,29579,'11 %'],[29579,84577,'30 %'],[84577,181917,'41 %'],[181917,Infinity,'45 %']];
+  let tmi = '0 %', rows='';
+  bornes.forEach(b=>{
+    const dans = qf>b[0];
+    if(qf>b[0] && qf<=b[1]) tmi = b[2];
+    rows += `<div class="ligne" style="${qf>b[0]&&qf<=b[1]?'background:#F3F6FC;font-weight:600':''}"><span>${b[1]===Infinity?'Au-delà de '+fmt(b[0])+' €':fmt(b[0])+' € à '+fmt(b[1])+' €'}</span><span>${b[2]}${qf>b[0]&&qf<=b[1]?' ← vous':''}</span></div>`;
+  });
+  montrer('tranches',
+    `<div class="gros">TMI : ${tmi}</div>
+     <div class="ligne"><span>Quotient familial (revenu ÷ parts)</span><span>${eur(Math.round(qf))} par part</span></div>
+     ${rows}
+     <p class="note">Le TMI ne s'applique qu'à la fraction de revenu située dans la dernière tranche, pas à l'ensemble. Votre taux moyen réel est toujours inférieur.</p>`,
+    'Barème 2026');
+}
+
+/* ── Calendrier fiscal ── */
+function calcCalendrierFiscal(){
+  let ev = [];
+  if(document.getElementById('cf-salarie').checked) ev.push(
+    ["Avril","Ouverture de la déclaration de revenus en ligne"],
+    ["Fin mai – mi-juin","Date limite de déclaration (par zone : dépt 01-19 fin mai, 20-54 début juin, 55-976 mi-juin)"],
+    ["Fin juillet – août","Réception de l'avis d'imposition"],
+    ["Septembre","Prélèvement du solde si impôt restant dû ; mise à jour du taux de prélèvement à la source"]);
+  if(document.getElementById('cf-proprio').checked) ev.push(
+    ["1er juillet","Date limite de déclaration d'occupation des biens (si changement)"],
+    ["Octobre","Avis de taxe foncière — paiement avant mi-octobre (20 oct. en ligne)"],
+    ["Novembre","Taxe sur les logements vacants / résidences secondaires le cas échéant"]);
+  if(document.getElementById('cf-micro').checked) ev.push(
+    ["Chaque mois ou trimestre","Déclaration de CA à l'URSSAF (même si CA nul)"],
+    ["Mai-juin","Déclaration 2042-C-PRO avec la déclaration de revenus"],
+    ["Décembre","CFE — paiement avant le 15 décembre"]);
+  if(document.getElementById('cf-ifi').checked) ev.push(
+    ["Mai-juin","Déclaration IFI en même temps que la déclaration de revenus (annexe 2042-IFI)"],
+    ["Septembre","Paiement de l'IFI"]);
+  let rows = ev.map(e=>`<div class="ligne"><span><b>${e[0]}</b></span><span style="text-align:right">${e[1]}</span></div>`).join('');
+  montrer('calendrierFiscal', rows + `<p class="note">Dates précises publiées chaque année par la DGFiP : <a href="https://www.impots.gouv.fr/particulier/calendrier-fiscal" target="_blank" rel="noopener">calendrier officiel impots.gouv.fr</a>.</p>`, 'Calendrier 2026');
+}
+
+/* ── 03. Brut/Net ── */
+function calcBrutNet(){
+  const m = v('bn-m'), taux = parseFloat(t('bn-statut')), sens = t('bn-sens'), per = t('bn-per');
+  let brut = sens==='brut' ? m : m/(1-taux);
+  let net = brut*(1-taux);
+  const netApresImpot = net*0.97; // approx PAS faible — purement indicatif, on affiche plutôt mensuel/annuel
+  const facteur = per==='an'?1:per==='mois'?12:35*52;
+  const brutMois = per==='mois'?brut:per==='an'?brut/12:brut*151.67;
+  const netMois = brutMois*(1-taux);
+  montrer('brutNet',
+    `<div class="gros">${eur(Math.round(net*100)/100)} ${sens==='brut'?'net':'brut : '+eur(Math.round(brut*100)/100)}</div>
+     <div class="ligne"><span>Brut mensuel équivalent</span><span>${eur(Math.round(brutMois))}</span></div>
+     <div class="ligne"><span>Net mensuel avant impôt</span><span>${eur(Math.round(netMois))}</span></div>
+     <div class="ligne"><span>Net annuel avant impôt</span><span>${eur(Math.round(netMois*12))}</span></div>
+     <div class="ligne"><span>Cotisations salariales estimées</span><span>${fmt(taux*100)} %</span></div>
+     <p class="note">Taux moyens indicatifs : le taux réel varie selon la convention collective, la mutuelle et le niveau de salaire. Pour mémoire, le SMIC est de 1 867,02 € brut / ≈ 1 477,93 € net depuis le 1er juin 2026. Le prélèvement à la source s'applique ensuite selon votre taux personnalisé.</p>`,
+    'Conversion');
+}
+
+/* ── Licenciement ── */
+function calcLicenciement(){
+  const sal = v('lic-sal'), anc = v('lic-annees');
+  const part1 = Math.min(anc,10) * sal/4;
+  const part2 = Math.max(0, anc-10) * sal/3;
+  const total = part1+part2;
+  montrer('licenciement',
+    `<div class="gros">${eur(Math.round(total))}</div>
+     <div class="ligne"><span>Jusqu'à 10 ans : ¼ de mois × ${fmt(Math.min(anc,10))} an(s)</span><span>${eur(Math.round(part1))}</span></div>
+     ${anc>10?`<div class="ligne"><span>Au-delà de 10 ans : ⅓ de mois × ${fmt(anc-10)} an(s)</span><span>${eur(Math.round(part2))}</span></div>`:''}
+     <p class="note">Indemnité légale <b>minimale</b> (ancienneté ≥ 8 mois requise). Votre convention collective peut prévoir mieux — vérifiez-la. Non due en cas de faute grave ou lourde. Exonérée d'impôt dans la limite légale. Détails : <a href="https://www.service-public.fr/particuliers/vosdroits/F987" target="_blank" rel="noopener">service-public.fr</a>.</p>`,
+    'Minimum légal');
+}
+
+/* ── Congés payés ── */
+function calcCongesPayes(){
+  const mois = Math.min(12, v('cp-mois')), pris = v('cp-pris'), report = v('cp-report');
+  const acquis = Math.ceil(mois*2.5);
+  const restants = acquis + report - pris;
+  montrer('congesPayes',
+    `<div class="gros">${fmt(restants)} jour${restants>1?'s':''} ouvrable${restants>1?'s':''}</div>
+     <div class="ligne"><span>Jours acquis (${fmt(mois)} mois × 2,5, arrondi supérieur)</span><span>${acquis}</span></div>
+     <div class="ligne"><span>Report période précédente</span><span>+ ${report}</span></div>
+     <div class="ligne"><span>Jours pris</span><span>− ${pris}</span></div>
+     <p class="note">Calcul en jours ouvrables (samedi inclus) : 30 jours = 5 semaines pour une année complète. Certaines entreprises comptent en jours ouvrés (25 jours/an). Les congés non pris sont en principe perdus sauf accord, maladie ou congé maternité.</p>`,
+    'Décompte');
+}
+
+/* ── Préavis ── */
+function calcPreavis(){
+  const type = t('pr-type'), statut = t('pr-statut'), anc = t('pr-anc');
+  let duree;
+  if(type==='licenciement' || type==='retraite'){
+    duree = anc==='0' ? 'Aucun préavis légal (usages/convention possibles)' : anc==='1' ? '1 mois' : '2 mois';
+    if(statut==='cadre' && anc!=='0') duree += ' (souvent 3 mois pour les cadres par convention collective)';
+  } else {
+    duree = statut==='cadre' ? '3 mois (usage le plus répandu pour les cadres)' : '1 mois (usage courant — la loi ne fixe pas de durée pour la démission)';
+  }
+  montrer('preavis',
+    `<div class="gros">${duree}</div>
+     <p class="note">${type==='demission'
+       ? "Pour une démission, la durée du préavis est fixée par la convention collective, l'accord d'entreprise ou l'usage — pas par la loi. Vérifiez impérativement votre convention collective (mentionnée sur votre bulletin de paie) sur <a href='https://www.legifrance.gouv.fr' target='_blank' rel='noopener'>legifrance.gouv.fr</a>."
+       : "Durées légales minimales (art. L1234-1). La convention collective peut prévoir un préavis plus long, notamment pour les cadres. Dispense possible d'un commun accord ou à l'initiative de l'employeur (avec indemnité compensatrice)."}</p>`,
+    'Préavis');
+}
+
+/* ── Chômage ── */
+function calcChomage(){
+  const sal = v('ch-sal'), age = v('ch-age');
+  const sjr = sal*12/365;
+  const partieFixe = 13.18; // valeur indicative 2025-2026
+  const are = Math.max(sjr*0.57, sjr*0.404 + partieFixe);
+  const areMin = 32.13, arePlafond = sjr*0.75;
+  const areJour = Math.min(Math.max(are, areMin), arePlafond);
+  const dureeMois = age<53 ? 18 : age<55 ? 22.5 : 27;
+  montrer('chomage',
+    `<div class="gros">≈ ${eur(Math.round(areJour*100)/100)} / jour</div>
+     <div class="ligne"><span>Soit par mois (30 jours)</span><span>≈ ${eur(Math.round(areJour*30))} brut</span></div>
+     <div class="ligne"><span>Salaire journalier de référence</span><span>${eur(Math.round(sjr*100)/100)}</span></div>
+     <div class="ligne"><span>Durée maximale d'indemnisation (${age} ans)</span><span>${fmt(dureeMois)} mois</span></div>
+     <div class="ligne"><span>Condition d'ouverture</span><span>6 mois travaillés sur 24 (36 si ≥ 53 ans)</span></div>
+     <p class="note">Estimation indicative : formule la plus favorable entre 57 % du SJR et 40,4 % du SJR + partie fixe (~13,18 €), dans la limite de 75 % du SJR. Dégressivité de 30 % à partir du 7e mois pour les salaires &gt; ~4 860 € brut/mois (moins de 55 ans). Les règles évoluent régulièrement : faites la simulation officielle sur <a href="https://www.francetravail.fr" target="_blank" rel="noopener">francetravail.fr</a>.</p>`,
+    'Estimation ARE');
+}
+
+/* ── 04. Encadrement des loyers ── */
+function calcEncadrement(){
+  const ville = t('el-ville').toLowerCase();
+  const zones = {
+    "paris":["Paris","https://www.referenceloyer.drihl.ile-de-france.developpement-durable.gouv.fr"],
+    "lille":["Lille, Hellemmes et Lomme","https://www.encadrement-loyers-hdf.fr"],
+    "lyon":["Lyon et Villeurbanne","https://www.grandlyon.com/services/lencadrement-des-loyers"],
+    "villeurbanne":["Lyon et Villeurbanne","https://www.grandlyon.com/services/lencadrement-des-loyers"],
+    "montpellier":["Montpellier","https://www.montpellier3m.fr/encadrement-des-loyers"],
+    "bordeaux":["Bordeaux","https://www.bordeaux-metropole.fr/encadrement-des-loyers"],
+    "aubervilliers":["Plaine Commune (Aubervilliers, Saint-Denis…)","https://plainecommune.fr"],
+    "saint-denis":["Plaine Commune (Saint-Denis, Aubervilliers…)","https://plainecommune.fr"],
+    "saint-ouen":["Plaine Commune","https://plainecommune.fr"],
+    "montreuil":["Est Ensemble (Montreuil, Bagnolet, Pantin…)","https://www.est-ensemble.fr"],
+    "pantin":["Est Ensemble","https://www.est-ensemble.fr"],
+    "bagnolet":["Est Ensemble","https://www.est-ensemble.fr"],
+    "biarritz":["Pays Basque","https://www.communaute-paysbasque.fr"],
+    "bayonne":["Pays Basque","https://www.communaute-paysbasque.fr"],
+    "anglet":["Pays Basque","https://www.communaute-paysbasque.fr"]
+  };
+  let trouve = null;
+  for(const k in zones){ if(ville.includes(k)){ trouve = zones[k]; break; } }
+  let html;
+  if(trouve){
+    html = `<div class="gros">Oui, ville concernée ✓</div>
+    <div class="ligne"><span>Zone d'encadrement</span><span>${trouve[0]}</span></div>
+    <p class="note">Le loyer (hors charges) ne peut pas dépasser le <b>loyer de référence majoré</b> fixé par arrêté préfectoral selon le quartier, l'époque de construction, le nombre de pièces et le type de location. Consultez le loyer de référence de votre adresse : <a href="${trouve[1]}" target="_blank" rel="noopener">site officiel de la zone</a>. En cas de dépassement : recours possible auprès du propriétaire, puis de la commission de conciliation, et signalement sur <a href="https://www.signal-logement.beta.gouv.fr" target="_blank" rel="noopener">signal-logement</a>.</p>`;
+  } else if(ville){
+    html = `<div class="gros">A priori non concernée</div>
+    <p class="note">En juin 2026, l'encadrement des loyers s'applique à : Paris, Lille (avec Hellemmes et Lomme), Lyon-Villeurbanne, Montpellier, Bordeaux, Plaine Commune et Est Ensemble (Seine-Saint-Denis), et certaines communes du Pays Basque. Partout en zone tendue s'applique en revanche l'encadrement de l'<b>évolution</b> des loyers à la relocation. Vérifiez si votre commune est en zone tendue : <a href="https://www.service-public.fr/simulateur/calcul/zones-tendues" target="_blank" rel="noopener">simulateur officiel</a>.</p>`;
+  } else {
+    html = `<p>Indiquez votre commune ci-dessus.</p>`;
+  }
+  montrer('encadrementLoyers', html, 'Vérification');
+}
+
+/* ── Dépôt de garantie ── */
+function calcDepotGarantie(){
+  const loyer = v('dg-loyer'), meuble = t('dg-type')==='meuble';
+  const max = loyer*(meuble?2:1);
+  montrer('depotGarantie',
+    `<div class="gros">${eur(max)} maximum</div>
+     <div class="ligne"><span>Règle</span><span>${meuble?'2 mois':'1 mois'} de loyer hors charges</span></div>
+     <div class="ligne"><span>Restitution si état des lieux conforme</span><span>1 mois max après remise des clés</span></div>
+     <div class="ligne"><span>Restitution avec retenues justifiées</span><span>2 mois max</span></div>
+     <div class="ligne"><span>Pénalité de retard</span><span>+10 % du loyer par mois de retard entamé</span></div>
+     <p class="note">Le dépôt ne peut pas être révisé en cours de bail. Si vous peinez à l'avancer : l'avance Loca-Pass (prêt à 0 %) peut le financer — <a href="https://www.actionlogement.fr" target="_blank" rel="noopener">actionlogement.fr</a>.</p>`,
+    'Montant légal');
+}
+
+/* ── Frais de notaire ── */
+function calcFraisNotaire(){
+  const prix = v('fn-prix'), neuf = t('fn-type')==='neuf';
+  const majore = document.getElementById('fn-majore').checked;
+  // Émoluments (barème proportionnel) + TVA 20%
+  function emoluments(p){
+    let e = 0;
+    e += Math.min(p,6500)*0.03870;
+    if(p>6500) e += (Math.min(p,17000)-6500)*0.01596;
+    if(p>17000) e += (Math.min(p,60000)-17000)*0.01064;
+    if(p>60000) e += (p-60000)*0.00799;
+    return e*1.2;
+  }
+  const emol = emoluments(prix);
+  const droits = neuf ? prix*0.00715 : prix*(majore?0.0631:0.0581);
+  const debours = 1200, csi = prix*0.001;
+  const total = emol+droits+debours+csi;
+  montrer('fraisNotaire',
+    `<div class="gros">≈ ${eur(Math.round(total))}</div>
+     <div class="ligne"><span>Droits de mutation (${neuf?'neuf ≈ 0,715 %':'ancien ≈ '+(majore?'6,31':'5,81')+' %'})</span><span>${eur(Math.round(droits))}</span></div>
+     <div class="ligne"><span>Émoluments du notaire (TTC)</span><span>${eur(Math.round(emol))}</span></div>
+     <div class="ligne"><span>Contribution de sécurité immobilière (0,10 %)</span><span>${eur(Math.round(csi))}</span></div>
+     <div class="ligne"><span>Débours et formalités (forfait estimé)</span><span>≈ ${eur(debours)}</span></div>
+     <div class="ligne"><span><b>Soit environ</b></span><span><b>${fmt(Math.round(total/prix*1000)/10)} % du prix</b></span></div>
+     <p class="note">${neuf?'Dans le neuf (VEFA), les "frais réduits" représentent 2 à 3 % du prix.':'La plupart des départements ont voté la majoration temporaire des droits (+0,5 point, 2025-2028) — décochez la case si le vôtre ne l\'a pas fait.'} Estimation hors frais de prêt et hors négociation éventuelle. Calculateur officiel : <a href="https://www.immobilier.notaires.fr/fr/frais-de-notaire" target="_blank" rel="noopener">notaires.fr</a>.</p>`,
+    'Estimation');
+}
+
+/* ── Aides rénovation ── */
+function calcAidesRenovation(){
+  const statut = t('ar-statut'), age = t('ar-age'), rfr = v('ar-rfr'), pers = v('ar-pers'), idf = t('ar-idf')==='idf';
+  if(statut==='locataire'){
+    montrer('aidesRenovation', `<div class="gros">Non éligible en direct</div><p class="note">MaPrimeRénov' est réservée aux propriétaires. En tant que locataire, signalez les travaux souhaités à votre propriétaire (notre modèle de lettre est disponible dans la section Logement) — lui peut être aidé. Les CEE « coup de pouce » restent parfois accessibles aux locataires pour de petits équipements.</p>`, 'Vérification');
+    return;
+  }
+  if(age==='0'){
+    montrer('aidesRenovation', `<div class="gros">Logement trop récent</div><p class="note">MaPrimeRénov' exige un logement d'au moins 15 ans. Les CEE restent possibles dès 2 ans pour certains travaux.</p>`, 'Vérification');
+    return;
+  }
+  // Plafonds indicatifs MaPrimeRénov' (barèmes 2025-2026 arrondis)
+  const plafonds = idf
+    ? {bleu:[23768,34884,41893,48914,55961], jaune:[28933,42463,51000,59549,68123], violet:[40404,59394,71060,83637,95758]}
+    : {bleu:[17173,25115,30206,35285,40388], jaune:[22015,32197,38719,45234,51775], violet:[30844,45340,54592,63844,73098]};
+  const i = Math.min(pers,5)-1;
+  let cat, couleur;
+  if(rfr <= plafonds.bleu[i]) {cat="Bleu (très modestes)"; couleur="aides maximales";}
+  else if(rfr <= plafonds.jaune[i]) {cat="Jaune (modestes)"; couleur="aides importantes";}
+  else if(rfr <= plafonds.violet[i]) {cat="Violet (intermédiaires)"; couleur="aides intermédiaires";}
+  else {cat="Rose (supérieurs)"; couleur="aides limitées (rénovation d'ampleur surtout)";}
+  montrer('aidesRenovation',
+    `<div class="gros">Profil MaPrimeRénov' : ${cat}</div>
+     <div class="ligne"><span>Niveau d'aide indicatif</span><span>${couleur}</span></div>
+     <div class="ligne"><span>Logement ${age==='15'?'> 15 ans':'2-15 ans'}</span><span>${age==='15'?'✓ éligible MaPrimeRénov\'':'CEE uniquement'}</span></div>
+     <div class="ligne"><span>Cumulable avec</span><span>CEE, éco-PTZ (jusqu'à 50 000 €), TVA 5,5 %</span></div>
+     ${statut==='proprio-bail'?'<div class="ligne"><span>Bailleur</span><span>Engagement de location 6 ans requis</span></div>':''}
+     <p class="note">Catégories indicatives basées sur les plafonds de revenus en vigueur (RFR N-1, ${idf?'Île-de-France':'hors IdF'}, foyer de ${pers}). Les barèmes et le périmètre du dispositif évoluent fréquemment — vérifiez sur <a href="https://france-renov.gouv.fr" target="_blank" rel="noopener">france-renov.gouv.fr</a> (conseil gratuit) avant tout engagement, et exigez des artisans RGE.</p>`,
+    'Éligibilité indicative');
+}
+
+/* ── 05. Cotisations micro ── */
+function calcCotisations(){
+  const ca = v('cot-ca'), act = t('cot-act');
+  let taux = act==='vente'?B.txVente:act==='serviceBIC'?B.txServiceBIC:act==='bnc'?B.txBNC:B.txCIPAV;
+  const acre = document.getElementById('cot-acre').checked;
+  const tauxEff = acre ? taux/2 : taux;
+  const cot = ca*tauxEff;
+  const cfp = ca*(act==='vente'?0.001:act==='serviceBIC'?0.003:0.002);
+  montrer('cotisations',
+    `<div class="gros">${eur(Math.round((cot+cfp)*100)/100)}</div>
+     <div class="ligne"><span>Cotisations sociales (${fmt(tauxEff*100)} %${acre?' avec ACRE':''})</span><span>${eur(Math.round(cot*100)/100)}</span></div>
+     <div class="ligne"><span>Contribution formation professionnelle</span><span>${eur(Math.round(cfp*100)/100)}</span></div>
+     <div class="ligne"><span>Il vous reste (avant impôt)</span><span>${eur(Math.round((ca-cot-cfp)*100)/100)}</span></div>
+     <p class="note">Taux 2026. Le taux BNC passe de 24,6 % à 25,6 % en 2026 (hausse programmée, prochaine étape 26,1 %). S'ajoutent les taxes pour frais de chambre consulaire (commerçants/artisans) et la CFE annuelle. Détail : <a href="https://www.autoentrepreneur.urssaf.fr" target="_blank" rel="noopener">autoentrepreneur.urssaf.fr</a>.</p>`,
+    'Taux 2026');
+}
+
+/* ── Plafond CA ── */
+function calcPlafondCA(){
+  const ca = v('pl-ca'), service = t('pl-act')==='service';
+  const plafond = service?B.plafondService:B.plafondVente;
+  const tvaSeuil = service?B.tvaService:B.tvaVente;
+  const restant = Math.max(0, plafond-ca);
+  const pct = Math.min(100, ca/plafond*100);
+  const restantTVA = Math.max(0, tvaSeuil-ca);
+  montrer('plafondCA',
+    `<div class="gros">${eur(restant)} restants</div>
+     <div style="background:var(--papier-fonce);border-radius:99px;height:14px;margin:10px 0;overflow:hidden"><div style="width:${pct}%;height:100%;background:${pct>90?'var(--tampon)':pct>70?'#D9912B':'var(--valide)'}"></div></div>
+     <div class="ligne"><span>Plafond micro 2026-2028</span><span>${fmt(plafond)} €</span></div>
+     <div class="ligne"><span>CA réalisé (${fmt(Math.round(pct))} % du plafond)</span><span>${eur(ca)}</span></div>
+     <div class="ligne"><span>Seuil de franchise de TVA</span><span>${fmt(tvaSeuil)} € ${restantTVA>0?'(reste '+eur(restantTVA)+')':'— DÉPASSÉ : TVA à facturer'}</span></div>
+     <p class="note">Un dépassement du plafond micro une seule année ne fait pas perdre le régime ; deux années consécutives entraînent le passage au régime réel au 1er janvier suivant. Le seuil de TVA est indépendant : son dépassement oblige à facturer la TVA dès le mois du dépassement, tout en restant en micro. <a href="https://www.economie.gouv.fr/entreprises/gerer-sa-micro-entreprise" target="_blank" rel="noopener">economie.gouv.fr</a>.</p>`,
+    pct>90?'⚠ Plafond proche':'Suivi de plafond');
+}
+
+/* ── Revenus nets ── */
+function calcRevenusNets(){
+  const ca = v('rn-ca'), act = t('rn-act'), modeImpot = t('rn-impot');
+  const taux = act==='vente'?B.txVente:act==='serviceBIC'?B.txServiceBIC:B.txBNC;
+  const abat = act==='vente'?B.abatVente:act==='serviceBIC'?B.abatServiceBIC:B.abatBNC;
+  const vl = act==='vente'?B.vlVente:act==='serviceBIC'?B.vlServiceBIC:B.vlBNC;
+  const cot = ca*taux;
+  let impot = 0, libelle = '';
+  if(modeImpot==='vl'){ impot = ca*vl; libelle = `Versement libératoire (${fmt(vl*100)} % du CA)`; }
+  else if(modeImpot==='bareme'){ impot = ca*(1-abat)*0.11; libelle = `Barème : ${fmt((1-abat)*100)} % du CA imposable × TMI 11 %`; }
+  else if(modeImpot==='bareme30'){ impot = ca*(1-abat)*0.30; libelle = `Barème : ${fmt((1-abat)*100)} % du CA imposable × TMI 30 %`; }
+  else libelle = 'Impôt ignoré';
+  const net = ca-cot-impot;
+  montrer('revenusNets',
+    `<div class="gros">${eur(Math.round(net))} net / an</div>
+     <div class="ligne"><span>Chiffre d'affaires</span><span>${eur(ca)}</span></div>
+     <div class="ligne"><span>Cotisations sociales (${fmt(taux*100)} %)</span><span>− ${eur(Math.round(cot))}</span></div>
+     <div class="ligne"><span>${libelle}</span><span>− ${eur(Math.round(impot))}</span></div>
+     <div class="ligne"><span><b>Soit par mois</b></span><span><b>${eur(Math.round(net/12))}</b></span></div>
+     <p class="note">Hors CFE, hors frais professionnels (non déductibles en micro — si vos charges réelles dépassent l'abattement forfaitaire de ${fmt(abat*100)} %, le régime réel peut être plus avantageux). Le versement libératoire est soumis à conditions de revenus.</p>`,
+    'Simulation');
+}
+
+/* ── Calendrier déclarations ── */
+function calcCalendrierDeclarations(){
+  const mensuel = t('cd-rythme')==='mensuel';
+  let rows;
+  if(mensuel){
+    rows = `<div class="ligne"><span>Chaque mois</span><span>Déclaration + paiement à la fin du mois suivant</span></div>
+    <div class="ligne"><span>Exemple</span><span>CA de juin 2026 → à déclarer avant le 31 juillet 2026</span></div>`;
+  } else {
+    rows = `<div class="ligne"><span>1er trimestre (janv.-mars)</span><span>avant le 30 avril</span></div>
+    <div class="ligne"><span>2e trimestre (avril-juin)</span><span>avant le 31 juillet</span></div>
+    <div class="ligne"><span>3e trimestre (juil.-sept.)</span><span>avant le 31 octobre</span></div>
+    <div class="ligne"><span>4e trimestre (oct.-déc.)</span><span>avant le 31 janvier</span></div>`;
+  }
+  rows += `<div class="ligne"><span>Mai-juin</span><span>Déclaration 2042-C-PRO (revenus)</span></div>
+  <div class="ligne"><span>15 décembre</span><span>Paiement de la CFE</span></div>`;
+  montrer('calendrierDeclarations', rows + `<p class="note">La déclaration de CA est obligatoire même à 0 €. Pénalité d'environ 60 € par déclaration manquante. Première déclaration : 90 jours après le début d'activité + le mois en cours. Tout se passe sur <a href="https://www.autoentrepreneur.urssaf.fr" target="_blank" rel="noopener">autoentrepreneur.urssaf.fr</a>.</p>`, mensuel?'Rythme mensuel':'Rythme trimestriel');
+}
+</script>
+
+<script>
+/* ════════ GÉNÉRATEURS DE DOCUMENTS ════════ */
+
+function lettreHTML(id, texte, titre){
+  return `<p class="note" style="margin-top:0">${titre||'Relisez, complétez les éléments entre crochets, puis copiez votre document.'}</p>
+  <textarea class="lettre" id="ta-${id}" spellcheck="false">${texte}</textarea>
+  <div class="actions" style="margin-top:10px"><button class="btn" onclick="copier('ta-${id}', this)">Copier le document</button></div>`;
+}
+function ou(val, defaut){ return val && val.length ? val : defaut; }
+
+/* ── Lettres propriétaire / locataire ── */
+function genLettreLogement(){
+  const type = t('ll-type');
+  const nom = ou(t('ll-nom'),'[Prénom NOM]'), adresse = ou(t('ll-adresse'),'[Adresse du logement]');
+  const dest = ou(t('ll-dest'),'[Nom du propriétaire ou de l\u2019agence]'), detail = t('ll-detail');
+  const entete = `${nom}\n${adresse}\n\nÀ l'attention de ${dest}\n\nFait le ${aujourdhui()}\n\n`;
+  let objet='', corps='', note='';
+  if(type==='conge'){
+    objet = "Objet : congé du logement — lettre recommandée avec accusé de réception";
+    corps = `Madame, Monsieur,\n\nPar la présente, je vous informe de ma décision de mettre fin au bail du logement situé ${adresse}, conformément à l'article 12 de la loi n° 89-462 du 6 juillet 1989.\n\n${detail ? 'Date de départ envisagée : '+detail+'.' : 'Date de départ envisagée : [JJ/MM/AAAA].'}\n\nLe préavis applicable est de trois mois, réduit à un mois si le logement se situe en zone tendue ou dans les autres cas prévus par la loi (mutation professionnelle, perte d'emploi, premier emploi, raisons de santé, bénéficiaire du RSA ou de l'AAH, attribution d'un logement social). [Le cas échéant, précisez ici le motif de préavis réduit et joignez le justificatif.]\n\nLe préavis court à compter de la réception de la présente lettre. Je me tiens à votre disposition pour convenir d'une date d'état des lieux de sortie et vous remettre les clés.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n${nom}\n[Signature]`;
+    note = 'Envoyez impérativement en recommandé avec AR (ou remise en main propre contre signature) : le préavis ne court qu\u2019à compter de la réception.';
+  } else if(type==='depot'){
+    objet = "Objet : restitution du dépôt de garantie — mise en demeure amiable";
+    corps = `Madame, Monsieur,\n\nJ'ai quitté le logement situé ${adresse} ${detail ? '('+detail+')' : '[date de remise des clés]'}, et l'état des lieux de sortie a été établi.\n\nConformément à l'article 22 de la loi du 6 juillet 1989, le dépôt de garantie doit être restitué dans un délai maximal d'un mois après la remise des clés si l'état des lieux de sortie est conforme à celui d'entrée, ou de deux mois dans le cas contraire, déduction faite des sommes justifiées.\n\nCe délai étant dépassé, je vous demande de me restituer la somme de [montant] € dans les meilleurs délais. À défaut, le dépôt de garantie restant dû sera majoré de plein droit de 10 % du loyer mensuel hors charges pour chaque mois de retard commencé.\n\nSans règlement sous 15 jours, je saisirai la commission départementale de conciliation, puis le juge des contentieux de la protection.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n${nom}\n[Signature]\n\nPièces jointes : état des lieux de sortie, RIB`;
+    note = 'La majoration de 10 % par mois de retard est automatique (loi ALUR). Joignez un RIB pour faciliter le virement.';
+  } else if(type==='travaux'){
+    objet = "Objet : demande de travaux dans le logement loué";
+    corps = `Madame, Monsieur,\n\nLocataire du logement situé ${adresse}, je vous signale le problème suivant : ${detail || '[décrivez précisément le problème : nature, localisation, date d\u2019apparition]'}.\n\nConformément à l'article 6 de la loi du 6 juillet 1989, le bailleur est tenu de délivrer un logement décent et d'y effectuer les réparations autres que locatives, ainsi que l'entretien normal des équipements mentionnés au bail.\n\nJe vous remercie de bien vouloir faire procéder aux travaux nécessaires dans un délai raisonnable. Je reste disponible pour permettre l'accès au logement à un professionnel.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n${nom}\n[Signature]\n\n[Joindre photos du problème si possible]`;
+    note = 'Gardez une copie. Sans réponse sous un mois, envoyez une mise en demeure en recommandé (outil disponible dans la section Documents).';
+  } else {
+    objet = "Objet : demande de quittance de loyer";
+    corps = `Madame, Monsieur,\n\nLocataire du logement situé ${adresse}, je vous remercie de bien vouloir me transmettre une quittance de loyer pour ${detail || '[période concernée, ex. : les mois de janvier à juin 2026]'}.\n\nJe vous rappelle qu'en application de l'article 21 de la loi du 6 juillet 1989, le bailleur est tenu de transmettre gratuitement une quittance au locataire qui en fait la demande, dès lors que le loyer et les charges ont été intégralement réglés. La quittance peut m'être adressée par voie dématérialisée.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n${nom}\n[Signature]`;
+    note = 'La quittance est gratuite et de droit : aucun frais ne peut vous être facturé pour son envoi.';
+  }
+  montrer('lettresLogement', lettreHTML('ll', entete + objet + '\n\n' + corps) + `<p class="note">${note}</p>`, 'Lettre générée');
+}
+
+/* ── Facture conforme ── */
+function genFacture(){
+  const nom = ou(t('fa-nom'),'[Nom / raison sociale]'), siret = ou(t('fa-siret'),'[SIRET]');
+  const adresse = ou(t('fa-adresse'),'[Adresse]'), num = ou(t('fa-num'),'2026-001');
+  const client = ou(t('fa-client'),'[Nom et adresse du client]'), date = ou(t('fa-date'),'[date]');
+  const desc = ou(t('fa-desc'),'[description de la prestation]');
+  const montant = v('fa-montant'), tva = t('fa-tva');
+  let lignesTVA, mentionTVA;
+  if(tva==='franchise'){
+    lignesTVA = `Total HT ............................... ${eur(montant)}\nTVA non applicable\nTOTAL À PAYER .......................... ${eur(montant)}`;
+    mentionTVA = 'TVA non applicable, art. 293 B du CGI';
+  } else {
+    const taux = parseFloat(tva)/100, mtva = montant*taux;
+    lignesTVA = `Total HT ............................... ${eur(montant)}\nTVA ${tva} % ............................. ${eur(mtva)}\nTOTAL TTC .............................. ${eur(montant+mtva)}`;
+    mentionTVA = 'N° de TVA intracommunautaire : [FR XX SIREN]';
+  }
+  const texte = `FACTURE N° ${num}
+Date d'émission : ${aujourdhui()}
+
+ÉMETTEUR
+${nom}
+${adresse}
+SIRET : ${siret}
+${mentionTVA}
+
+CLIENT
+${client}
+
+──────────────────────────────────────────
+Date de la prestation / vente : ${date}
+
+Désignation :
+${desc}
+
+${lignesTVA}
+──────────────────────────────────────────
+
+Paiement à réception — par virement : [IBAN]
+Date limite de paiement : [date d'émission + 30 jours]
+
+Escompte pour paiement anticipé : néant.
+En cas de retard de paiement : pénalités au taux de [3 fois le taux d'intérêt légal] et indemnité forfaitaire de recouvrement de 40 € (art. L441-10 C. com.) — clients professionnels uniquement.
+${tva==='franchise' ? '\nTVA non applicable, article 293 B du Code général des impôts.' : ''}
+Membre d'une association agréée / EI : [le cas échéant, mention « EI » ou « entrepreneur individuel » obligatoire à côté du nom]`;
+  montrer('facture', lettreHTML('fa', texte) +
+    `<p class="note">Mentions obligatoires vérifiées : numéro unique et chronologique, date, identités complètes, SIRET, désignation, prix, mention TVA, pénalités de retard. La mention « EI » est obligatoire pour tout entrepreneur individuel depuis 2022. Conservez chaque facture 10 ans.</p>`, 'Facture générée');
+}
+
+/* ── Lettre de résiliation ── */
+function genResiliation(){
+  const type = t('lr-type');
+  const nom = ou(t('lr-nom'),'[Prénom NOM]'), adresse = ou(t('lr-adresse'),'[Adresse]');
+  const dest = ou(t('lr-dest'),'[Organisme]'), contrat = ou(t('lr-contrat'),'[référence]');
+  let corps='', note='';
+  if(type==='assurance'){
+    corps = `Par la présente, je vous notifie la résiliation de mon contrat d'assurance n° ${contrat}.\n\n[Choisissez le fondement applicable :]\n— Contrat de plus d'un an : résiliation à tout moment en application de l'article L113-15-2 du Code des assurances (loi Hamon), avec effet un mois après réception de la présente.\n— À l'échéance annuelle : résiliation en application de l'article L113-12 du Code des assurances, moyennant un préavis de deux mois.\n\nJe vous remercie de m'adresser une confirmation écrite de la résiliation ainsi que, le cas échéant, le remboursement de la prime payée pour la période postérieure à la date d'effet.`;
+    note = 'Auto/moto/habitation : depuis la loi Hamon, le nouvel assureur peut effectuer la démarche à votre place. La résiliation « en 3 clics » en ligne est obligatoire si le contrat peut être souscrit en ligne.';
+  } else if(type==='salle'){
+    corps = `Par la présente, je vous notifie la résiliation de mon abonnement n° ${contrat} à votre salle de sport.\n\n[Choisissez le cas applicable :]\n— Contrat à durée indéterminée ou tacitement reconduit : résiliation à tout moment moyennant le préavis prévu au contrat (généralement un à deux mois).\n— Motif légitime (mutation professionnelle, raison médicale attestée par certificat, déménagement) : résiliation anticipée du contrat à durée déterminée, justificatif joint.\n\nJe vous demande de cesser tout prélèvement à compter de la date d'effet de la résiliation et de m'adresser une confirmation écrite.`;
+    note = 'Si les prélèvements continuent après la date d\u2019effet, faites opposition auprès de votre banque et envoyez une mise en demeure.';
+  } else if(type==='energie'){
+    corps = `Par la présente, je vous notifie la résiliation de mon contrat de fourniture d'énergie n° ${contrat}, à effet du [date souhaitée].\n\nLes contrats d'énergie sont sans engagement pour les particuliers : la résiliation est gratuite et sans préavis.\n\nRelevé de compteur à la date de résiliation : [index] (ou relevé Linky/Gazpar automatique).\n\nJe vous remercie de m'adresser la facture de clôture ainsi que le remboursement de tout trop-perçu.\n\nNouvelle adresse pour la facture de clôture : [adresse].`;
+    note = 'En cas de déménagement, ne résiliez pas l\u2019ancien contrat avant d\u2019avoir souscrit le nouveau pour le nouveau logement. En cas de simple changement de fournisseur, le nouveau s\u2019occupe de tout : cette lettre est alors inutile.';
+  } else {
+    corps = `Par la présente, je vous notifie la résiliation de mon abonnement n° ${contrat}, à compter de la réception de ce courrier ou, le cas échéant, à l'issue de la période de préavis prévue au contrat.\n\n[Si engagement de 24 mois en cours, après le 12e mois — téléphonie/internet :] Conformément à l'article L224-28 du Code de la consommation, je m'acquitterai au maximum du quart des sommes restant dues jusqu'à la fin de l'engagement.\n\n[Si motif légitime : déménagement à l'étranger, surendettement, etc. — joindre justificatif.]\n\nJe vous demande de me confirmer par écrit la date d'effet de la résiliation et de cesser tout prélèvement au-delà de cette date.`;
+    note = 'Internet/mobile : la résiliation doit être effective sous 10 jours après la demande (art. L224-39 C. conso). Pensez à restituer la box pour éviter la facturation du matériel.';
+  }
+  const texte = `${nom}\n${adresse}\n\n${dest}\n[Adresse du service résiliation]\n\nLettre recommandée avec accusé de réception\nFait le ${aujourdhui()}\n\nObjet : résiliation du contrat n° ${contrat}\n\nMadame, Monsieur,\n\n${corps}\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n${nom}\n[Signature]`;
+  montrer('lettreResiliation', lettreHTML('lr', texte) + `<p class="note">${note}</p>`, 'Lettre générée');
+}
+
+/* ── Attestation sur l'honneur ── */
+function genAttestation(){
+  const nom = ou(t('ah-nom'),'[Prénom NOM]'), naiss = ou(t('ah-naiss'),'[JJ/MM/AAAA à Ville]');
+  const adresse = ou(t('ah-adresse'),'[Adresse]'), objet = ou(t('ah-objet'),'[fait attesté]');
+  const texte = `ATTESTATION SUR L'HONNEUR
+
+Je soussigné(e) ${nom},
+né(e) le ${naiss},
+demeurant ${adresse},
+
+atteste sur l'honneur ${objet}.
+
+J'ai connaissance des sanctions pénales encourues en cas de fausse déclaration, prévues par l'article 441-7 du Code pénal : un an d'emprisonnement et 15 000 € d'amende.
+
+Fait pour servir et valoir ce que de droit.
+
+Fait à [ville], le ${aujourdhui()}
+
+Signature :`;
+  montrer('attestationHonneur', lettreHTML('ah', texte) +
+    `<p class="note">L'attestation doit être manuscrite ou signée à la main. Certains organismes exigent un formulaire propre (ex. CERFA) : vérifiez avant d'envoyer. La mention des sanctions pénales renforce la valeur du document.</p>`, 'Attestation générée');
+}
+
+/* ── Mise en demeure ── */
+function genMiseEnDemeure(){
+  const nom = ou(t('md-nom'),'[Prénom NOM]'), adresse = ou(t('md-adresse'),'[Adresse]');
+  const dest = ou(t('md-dest'),'[Destinataire]'), delai = v('md-delai')||15;
+  const objet = ou(t('md-objet'),'[ce que vous exigez]'), faits = ou(t('md-faits'),'[rappel des faits et des relances]');
+  const texte = `${nom}
+${adresse}
+
+${dest}
+
+Lettre recommandée avec accusé de réception
+Fait le ${aujourdhui()}
+
+Objet : MISE EN DEMEURE
+
+Madame, Monsieur,
+
+Rappel des faits :
+${faits}
+
+Malgré mes démarches, cette situation demeure sans solution à ce jour.
+
+En conséquence, je vous mets en demeure, par la présente et en application de l'article 1344 du Code civil, d'exécuter votre obligation, à savoir : ${objet}, dans un délai de ${delai} jours à compter de la réception de ce courrier.
+
+À défaut d'exécution dans ce délai, je me réserve le droit de saisir la juridiction compétente afin d'obtenir l'exécution forcée de votre obligation, ainsi que des dommages et intérêts, et ce sans nouvel avertissement.
+
+La présente mise en demeure fait courir les intérêts au taux légal.
+
+Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+${nom}
+[Signature]
+
+Pièces jointes : [copies des justificatifs : commande, facture, échanges…]`;
+  montrer('miseEnDemeure', lettreHTML('md', texte) +
+    `<p class="note">Envoi en recommandé avec AR indispensable : la mise en demeure est le préalable exigé avant toute action en justice et fait courir les intérêts légaux. Litige de consommation : si elle reste sans effet, saisissez gratuitement le médiateur de la consommation du professionnel, puis le juge (procédure simplifiée en ligne jusqu'à 5 000 € sur <a href="https://www.justice.fr" target="_blank" rel="noopener">justice.fr</a>).</p>`, 'Mise en demeure générée');
+}
+
+/* ── Demande de remboursement ── */
+function genRemboursement(){
+  const nom = ou(t('dr-nom'),'[Prénom NOM]'), adresse = ou(t('dr-adresse'),'[Adresse]');
+  const dest = ou(t('dr-dest'),'[Vendeur / organisme]'), montant = v('dr-montant');
+  const motif = t('dr-motif'), ref = ou(t('dr-ref'),'[référence]');
+  let fondement;
+  if(motif==='defectueux'){
+    fondement = `Le produit présente un défaut de conformité. En application des articles L217-3 et suivants du Code de la consommation, vous êtes tenu à la garantie légale de conformité pendant deux ans à compter de la délivrance. Le défaut apparu dans ce délai est présumé exister au jour de l'achat.\n\nLa réparation ou le remplacement n'étant pas possible / n'ayant pas été effectué dans un délai de trente jours, je demande la résolution de la vente et le remboursement intégral.`;
+  } else if(motif==='nonlivre'){
+    fondement = `La commande n'a pas été livrée à la date prévue. En application de l'article L216-6 du Code de la consommation, après vous avoir enjoint de livrer dans un délai supplémentaire raisonnable resté sans effet, je résous le contrat et vous demande le remboursement intégral des sommes versées.\n\nCe remboursement doit intervenir au plus tard dans les quatorze jours suivant la résolution, sous peine de majorations légales (jusqu'à 50 % au-delà de soixante jours de retard).`;
+  } else if(motif==='annule'){
+    fondement = `La prestation a été annulée de votre fait. Le contrat n'ayant pas été exécuté, les sommes versées sont dépourvues de cause et doivent m'être intégralement restituées.`;
+  } else {
+    fondement = `Un trop-perçu / double prélèvement apparaît sur mon compte. Cette somme, indûment perçue, doit m'être restituée en application des articles 1302 et suivants du Code civil (paiement de l'indu).`;
+  }
+  const texte = `${nom}
+${adresse}
+
+${dest}
+
+Fait le ${aujourdhui()}
+
+Objet : demande de remboursement — ${ref}
+
+Madame, Monsieur,
+
+${fondement}
+
+Référence : ${ref}
+Montant réclamé : ${montant>0 ? eur(montant) : '[montant] €'}
+
+Je vous remercie de procéder au remboursement sous quatorze jours, par le même moyen de paiement que celui utilisé initialement, ou par virement sur le compte dont le RIB est joint.
+
+À défaut de réponse dans ce délai, je vous adresserai une mise en demeure puis saisirai le médiateur de la consommation et, le cas échéant, la juridiction compétente.
+
+Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+${nom}
+[Signature]
+
+Pièces jointes : justificatif d'achat, [photos / relevé bancaire]`;
+  montrer('demandeRemboursement', lettreHTML('dr', texte) +
+    `<p class="note">Premier envoi : un email peut suffire. Sans réponse sous 14 jours, renvoyez en recommandé avec AR puis utilisez l'outil « Mise en demeure ». Achat en ligne : vous disposez aussi d'un droit de rétractation de 14 jours sans motif (art. L221-18 C. conso).</p>`, 'Demande générée');
+}
+
+/* ── Procuration simple ── */
+function genProcuration(){
+  const mandant = ou(t('pc-mandant'),'[Prénom NOM]'), n1 = ou(t('pc-naiss1'),'[JJ/MM/AAAA à Ville]');
+  const adresse = ou(t('pc-adresse1'),'[Adresse]');
+  const mandataire = ou(t('pc-mandataire'),'[Prénom NOM]'), n2 = ou(t('pc-naiss2'),'[JJ/MM/AAAA à Ville]');
+  const objet = ou(t('pc-objet'),'[démarche à effectuer]'), fin = t('pc-fin');
+  const texte = `PROCURATION
+
+Je soussigné(e) ${mandant},
+né(e) le ${n1},
+demeurant ${adresse},
+
+donne par la présente procuration à :
+
+${mandataire},
+né(e) le ${n2},
+
+pour, en mon nom et pour mon compte, effectuer la démarche suivante :
+${objet}.
+
+${fin ? 'La présente procuration est valable jusqu\u2019au '+fin+'.' : 'La présente procuration est valable pour cette seule démarche.'}
+
+Le mandataire devra présenter la présente procuration, une pièce d'identité à son nom ainsi qu'une copie de ma pièce d'identité.
+
+Fait à [ville], le ${aujourdhui()}
+
+Signature du mandant :                    Signature du mandataire
+(précédée de la mention                   (pour acceptation) :
+« Bon pour pouvoir ») :`;
+  montrer('procuration', lettreHTML('pc', texte) +
+    `<p class="note">Joignez la copie de la pièce d'identité du mandant. Cas particuliers exclus : procuration de vote (démarche en ligne sur <a href="https://www.maprocuration.gouv.fr" target="_blank" rel="noopener">maprocuration.gouv.fr</a> ou au commissariat), procuration bancaire (formulaire propre à la banque), actes notariés (procuration authentique obligatoire).</p>`, 'Procuration générée');
+}
+</script>
+
+<script>
+/* ════════ DONNÉES CERFA (liens officiels gouvernement) ════════ */
+const CERFA = [
+  { groupe: "🚗 Véhicule & permis", items: [
+    ["Demande de certificat d'immatriculation (carte grise)", "Cerfa 13750 — ANTS", "https://immatriculation.ants.gouv.fr/"],
+    ["Déclaration de cession d'un véhicule", "Cerfa 15776 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R20196"],
+    ["Demande de permis de conduire (par perte/vol)", "service-public.fr", "https://permisdeconduire.ants.gouv.fr/"],
+    ["Constat amiable d'accident automobile", "Modèle officiel assureurs", "https://www.service-public.fr/particuliers/vosdroits/F20448"],
+  ]},
+  { groupe: "🪪 Identité & nationalité", items: [
+    ["Pré-demande de carte nationale d'identité", "ANTS", "https://ants.gouv.fr/les-solutions/cni-carte-nationale-didentite"],
+    ["Pré-demande de passeport", "ANTS", "https://ants.gouv.fr/les-solutions/passeport"],
+    ["Demande d'acte de naissance / mariage / décès", "service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R1406"],
+    ["Demande d'attestation d'accueil", "Cerfa 10798 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R10751"],
+  ]},
+  { groupe: "💶 Impôts & finances", items: [
+    ["Déclaration de revenus (2042)", "Cerfa 10330 — impots.gouv.fr", "https://www.impots.gouv.fr/formulaire/2042/declaration-des-revenus"],
+    ["Déclaration revenus auto-entrepreneur (2042-C-PRO)", "Cerfa 11222 — impots.gouv.fr", "https://www.impots.gouv.fr/formulaire/2042-c-pro/declaration-complementaire-de-revenus-des-professions-non-salariees"],
+    ["Déclaration de revenus fonciers (2044)", "Cerfa 10334 — impots.gouv.fr", "https://www.impots.gouv.fr/formulaire/2044/declaration-des-revenus-fonciers"],
+    ["Demande de délai de paiement / remise (impôts)", "impots.gouv.fr", "https://www.impots.gouv.fr/particulier/questions/jai-des-difficultes-payer-puis-je-avoir-des-delais-de-paiement"],
+    ["Plus-value immobilière (2048-IMM)", "Cerfa 12359 — impots.gouv.fr", "https://www.impots.gouv.fr/formulaire/2048-imm-sd/cession-dimmeubles-ou-de-droits-immobiliers"],
+  ]},
+  { groupe: "👨‍👩‍👧 Famille & social", items: [
+    ["Demande de RSA", "Cerfa 15481 — caf.fr", "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-personnelle/le-revenu-de-solidarite-active-rsa"],
+    ["Demande d'aide au logement (APL)", "caf.fr", "https://wwwd.caf.fr/wps/portal/caffr/aidesetdemarches/lesservicesenligne/faireunedemandedeprestation"],
+    ["Demande à la MDPH (AAH, handicap)", "Cerfa 15692 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R19993"],
+    ["Demande de complément de libre choix du mode de garde", "Cerfa 13110 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R17157"],
+    ["Reconnaissance conjointe avant naissance", "service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/F887"],
+  ]},
+  { groupe: "💼 Travail & chômage", items: [
+    ["Inscription France Travail (Pôle emploi)", "francetravail.fr", "https://candidat.francetravail.fr/inscription/"],
+    ["Demande d'allocation chômage (ARE)", "francetravail.fr", "https://www.francetravail.fr/candidat/vos-droits-et-demarches/lallocation-daide-au-retour-a.html"],
+    ["Rupture conventionnelle (homologation)", "Cerfa 14598 — TéléRC", "https://www.telerc.travail.gouv.fr/"],
+    ["Demande de prime d'activité", "caf.fr", "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-professionnelle/la-prime-d-activite"],
+  ]},
+  { groupe: "🏠 Logement & urbanisme", items: [
+    ["Déclaration préalable de travaux", "Cerfa 13703 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R2028"],
+    ["Demande de permis de construire", "Cerfa 13406 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R20835"],
+    ["Demande de logement social", "Cerfa 14069 — service-public.fr", "https://www.service-public.fr/particuliers/vosdroits/R149"],
+    ["MaPrimeRénov' (rénovation énergétique)", "france-renov.gouv.fr", "https://www.maprimerenov.gouv.fr/"],
+  ]},
+  { groupe: "⚖️ Justice & succession", items: [
+    ["Requête au juge des contentieux de la protection", "Cerfa 16042 — justice.fr", "https://www.justice.fr/formulaire/cerfa-1604201-saisine-juge-contentieux-protection"],
+    ["Déclaration de succession", "Cerfa 2705 — impots.gouv.fr", "https://www.impots.gouv.fr/formulaire/2705-sd/declaration-de-succession"],
+    ["Demande de chèque énergie / aide", "chequeenergie.gouv.fr", "https://chequeenergie.gouv.fr/"],
+    ["Demande d'aide juridictionnelle", "Cerfa 16146 — justice.fr", "https://www.justice.fr/formulaire/cerfa-1614602-demande-aide-juridictionnelle"],
+  ]},
+];
+
+function rendreCerfa(filtre){
+  const f = (filtre||'').toLowerCase().trim();
+  const cont = document.getElementById('cerfaListe');
+  let html = '', total = 0;
+  CERFA.forEach(g => {
+    const items = g.items.filter(([t,r]) => !f || (t+' '+r).toLowerCase().includes(f));
+    if(!items.length) return;
+    total += items.length;
+    html += `<div class="cerfa-groupe"><h3>${g.groupe}</h3><div class="cerfa-liens">`;
+    items.forEach(([t,r,u]) => {
+      html += `<a class="cerfa-lien" href="${u}" target="_blank" rel="noopener"><span><span class="ti">${t}</span><br><span class="ref">${r}</span></span><span class="fl">↗</span></a>`;
+    });
+    html += `</div></div>`;
+  });
+  if(!total) html = `<p class="cerfa-vide">Aucun formulaire ne correspond à « ${filtre} ». Essayez un autre mot-clé (ex. : « impôt », « véhicule », « logement »).</p>`;
+  cont.innerHTML = html;
+}
+function filtrerCerfa(){ rendreCerfa(document.getElementById('cerfaSearch').value); }
+
+/* ════════ RÉSEAU — mes autres sites ════════ */
+const RESEAU = [
+  ["🗝️", "ARCANA — Escape game", "Un escape game immersif en 60 énigmes réparties sur trois actes : Le Manoir Maudit, La Cité Perdue et Le Vaisseau de l'Oubli. Gratuit, jouable dans le navigateur.", "https://biloute26.github.io/arcana-escape/"],
+  ["🏕️", "L'Atelier du Dehors", "Conseils, tests et sélections pour vos activités de plein air : randonnée, camping, jardin et nature. Guides détaillés et comparatifs.", "https://biloute26.github.io/atelier-du-dehors/"],
+  ["📸", "PhotoencyclopIA", "Une encyclopédie photo intelligente : prenez une photo, l'application l'analyse et vous renseigne. Installable comme appli sur mobile.", "https://biloute26.github.io/PhotoencyclopIA/"],
+  ["🧰", "Outils pratiques du quotidien", "Une boîte à outils en ligne : convertisseurs, calculatrices et utilitaires malins pour la vie de tous les jours. Sans inscription.", "https://biloute26.github.io/Outils-pratiques-du-Quotidien/"],
+];
+
+function rendreReseau(){
+  const cont = document.getElementById('reseauListe');
+  cont.innerHTML = RESEAU.map(([e,t,d,u]) =>
+    `<a class="reseau-card" href="${u}" target="_blank" rel="noopener"><span class="emoji">${e}</span><h3>${t}</h3><p>${d}</p><span class="visiter">Découvrir →</span></a>`
+  ).join('');
+}
+
+/* ════════ INITIALISATION ════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  chargerBaremes();
+  rendreCerfa('');
+  rendreReseau();
+  // Initialiser les blocs publicitaires
+  try {
+    document.querySelectorAll('.adsbygoogle').forEach(() => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  } catch(e){}
+});
+</script>
+
+</body>
+</html>
