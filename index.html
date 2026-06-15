@@ -316,6 +316,17 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
 .rg-vide h3{font-family:'Spectral',serif;font-size:20px;color:var(--encre);margin-bottom:8px}
 .rg-vide a{color:var(--bleu-form);font-weight:600}
 @media(max-width:560px){.rg-kbd{display:none}.rg-box input{font-size:15px}}
+
+/* ── Autocomplétion ── */
+.recherche-glob .wrap{position:relative}
+.rg-auto{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--blanc);border:1.5px solid var(--ligne);border-radius:11px;box-shadow:0 8px 24px rgba(27,42,74,.13);overflow:hidden;z-index:50;display:none}
+.rg-auto.on{display:block}
+.rg-auto button{display:flex;align-items:center;gap:11px;width:100%;border:none;background:transparent;text-align:left;padding:11px 16px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:var(--encre);transition:.1s;border-bottom:1px solid var(--papier-fonce)}
+.rg-auto button:last-child{border-bottom:none}
+.rg-auto button:hover,.rg-auto button.ac-sel{background:var(--papier-fonce)}
+.rg-auto button svg{width:16px;height:16px;stroke:#A9B2C4;flex-shrink:0}
+.rg-auto button b{color:var(--bleu-form);font-weight:600}
+.rg-auto button span{text-transform:capitalize}
 </style>
 </head>
 <body>
@@ -343,7 +354,6 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
 
 <nav class="cats" aria-label="Catégories">
   <div class="wrap">
-    <a href="#assistant" class="assist">✦ Que voulez-vous faire ?</a>
     <a href="#aides">Argent &amp; aides</a>
     <a href="#impots">Impôts</a>
     <a href="#travail">Travail</a>
@@ -364,6 +374,7 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
       <span class="rg-kbd" aria-hidden="true">/</span>
       <button class="rg-clear" id="rgClear" type="button" aria-label="Effacer la recherche">✕</button>
     </div>
+    <div class="rg-auto" id="rgAuto" role="listbox" aria-label="Suggestions"></div>
     <div class="rg-meta" id="rgMeta" aria-live="polite">
       <span class="rg-sugg-label">Suggestions :</span>
       <span class="rg-sugg" id="rgSugg"></span>
@@ -375,7 +386,7 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
 
   <div class="rg-vide" id="rgVide">
     <h3>Aucun outil ne correspond à « <span id="rgVideTerme"></span> »</h3>
-    <p>Essayez un autre mot-clé, ou décrivez votre situation dans l'assistant ci-dessous.<br>Vous pouvez aussi consulter directement <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a>.</p>
+    <p>Essayez un autre mot-clé (au singulier, ou plus court).<br>Vous pouvez aussi consulter les <a href="#cerfa">formulaires CERFA</a> ou directement <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a>.</p>
   </div>
 
 
@@ -384,19 +395,7 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
     <span><b>Important :</b> ces outils donnent des <b>estimations indicatives</b> fondées sur les barèmes officiels en vigueur (loi de finances 2026, décrets de revalorisation d'avril et juin 2026). Ils ne remplacent ni un conseil professionnel, ni les simulateurs officiels des administrations, seuls à faire foi. Vérifiez toujours sur les liens officiels indiqués.</span>
   </div>
 
-  <!-- ════════ ASSISTANT ════════ -->
-  <section class="assistant" id="assistant">
-    <h2>Que voulez-vous faire&nbsp;?</h2>
-    <p class="sub">Décrivez votre situation : nous vous indiquons les démarches à effectuer, dans quel ordre, avec les délais et les organismes à contacter.</p>
-    <div class="champ">
-      <div class="ligne-form">
-        <input type="text" id="situationInput" placeholder="Ex. : je vais déménager, j'ai perdu mon emploi…" aria-label="Décrivez votre situation">
-      </div>
-      <button class="btn rouge" onclick="lancerAssistant()">Voir mes démarches</button>
-    </div>
-    <div class="chips" id="chipsSituations"></div>
-    <div class="recepisse" id="recepisse"></div>
-  </section>
+  <!-- (Bloc « Que voulez-vous faire ? » retiré : la recherche globale en haut le remplace) -->
 
   <!-- Publicité -->
   <div class="pub">
@@ -791,16 +790,18 @@ function lancerAssistant(cle){
   r.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-// Chips + entrée clavier
+// Chips + entrée clavier (assistant retiré — garde-fou si les éléments sont absents)
 (function(){
   const c = document.getElementById('chipsSituations');
+  const si = document.getElementById('situationInput');
+  if(!c || !si) return;
   for(const k in SITUATIONS){
     const b = document.createElement('button');
     b.textContent = SITUATIONS[k].chips;
-    b.onclick = ()=>{ document.getElementById('situationInput').value=''; lancerAssistant(k); };
+    b.onclick = ()=>{ si.value=''; lancerAssistant(k); };
     c.appendChild(b);
   }
-  document.getElementById('situationInput').addEventListener('keydown',e=>{
+  si.addEventListener('keydown',e=>{
     if(e.key==='Enter') lancerAssistant();
   });
 })();
@@ -2017,8 +2018,39 @@ function rgNorm(s){
     .replace(/\s+/g,' ').trim();
 }
 
+// Radical : minuscule, sans accent, et on retire les terminaisons de pluriel/féminin courantes
+function rgRadical(mot){
+  let m = mot;
+  if(m.length > 4) m = m.replace(/(aux|eaux|ales|ales)$/,'a');  // chevaux→cheva, fiscaux→fisca
+  if(m.length > 3) m = m.replace(/s$/,'');                       // impots→impot, aides→aide
+  if(m.length > 4) m = m.replace(/(es|er|ee|ent|ions|ion|tion)$/,''); // resiliation→resilia...
+  return m;
+}
+
+// Un mot tapé correspond-il à un token de l'index ? (radical commun OU préfixe ≥3)
+function rgMotMatch(tape, token){
+  if(token.indexOf(tape)===0 || tape.indexOf(token)===0) return true; // préfixe direct
+  const a = rgRadical(tape), b = rgRadical(token);
+  if(!a || !b) return false;
+  if(a===b) return true;
+  if(a.length>=3 && b.indexOf(a)===0) return true;   // "resil" → "resiliation"
+  if(b.length>=3 && a.indexOf(b)===0) return true;
+  return false;
+}
+
+const RG_VOCAB = [];   // {mot, poids}  pour l'autocomplétion
+const RG_STOP = new Set("de la le les des du un une et ou en au aux pour par sur vos votre votre selon avec sans dans que qui vous ce cet cette mes ma mon".split(' '));
+
 function rgConstruireIndex(){
   RG_INDEX = [];
+  const vocab = {};   // motNormalisé -> poids
+  const ajouterVocab = (texte, poids)=>{
+    rgNorm(texte).split(' ').forEach(w=>{
+      if(w.length>=3 && !RG_STOP.has(w) && !/^\d+$/.test(w))
+        vocab[w] = (vocab[w]||0) + poids;
+    });
+  };
+
   document.querySelectorAll('.outil').forEach(btn => {
     const titreEl = btn.querySelector('h3'), pEl = btn.querySelector('p');
     const m = (btn.getAttribute('onclick')||'').match(/ouvrirOutil\('([^']+)'\)/);
@@ -2026,43 +2058,46 @@ function rgConstruireIndex(){
     const titre = titreEl ? titreEl.textContent : '';
     const desc = pEl ? pEl.textContent : '';
     const syn = RG_SYNONYMES[id] || '';
-    RG_INDEX.push({ el:btn, titreEl, pEl, type:'outil',
-      hay: rgNorm(titre+' '+desc+' '+syn) });
+    const hay = rgNorm(titre+' '+desc+' '+syn);
+    RG_INDEX.push({ el:btn, titreEl, pEl, type:'outil', hay, tokens:hay.split(' ') });
+    ajouterVocab(titre, 5); ajouterVocab(syn, 3); ajouterVocab(desc, 1);
   });
   document.querySelectorAll('.reseau-card').forEach(card => {
     const titreEl = card.querySelector('h3'), pEl = card.querySelector('p');
-    RG_INDEX.push({ el:card, titreEl, pEl, type:'reseau',
-      hay: rgNorm((titreEl?titreEl.textContent:'')+' '+(pEl?pEl.textContent:'')) });
+    const hay = rgNorm((titreEl?titreEl.textContent:'')+' '+(pEl?pEl.textContent:''));
+    RG_INDEX.push({ el:card, titreEl, pEl, type:'reseau', hay, tokens:hay.split(' ') });
   });
+  // Mots-clés des formulaires CERFA, s'ils sont déjà rendus
+  if(typeof CERFA!=='undefined') CERFA.forEach(g=> g.items.forEach(([t])=> ajouterVocab(t,2)));
+
+  RG_VOCAB.length = 0;
+  Object.entries(vocab).sort((a,b)=>b[1]-a[1]).forEach(([mot,poids])=> RG_VOCAB.push({mot,poids}));
 }
 
-function rgSurligner(el, terme){
+function rgSurligner(el, mots){
   if(!el) return;
   if(el.dataset.rgOrig === undefined) el.dataset.rgOrig = el.textContent;
   const txt = el.dataset.rgOrig;
-  if(!terme){ el.textContent = txt; return; }
-  const mots = terme.split(' ').filter(w => w.length >= 2);
-  if(!mots.length){ el.textContent = txt; return; }
+  if(!mots || !mots.length){ el.textContent = txt; return; }
 
-  // Normalise CHAQUE caractère séparément → garde un mapping 1 char original ↔ 1 char normalisé.
-  // (un caractère original peut produire 0..n chars normalisés ; on les rattache à son index)
-  let norm = '';
-  const map = [];               // map[posNorm] = index du caractère original
-  for(let i=0;i<txt.length;i++){
-    const n = rgNorm(txt[i]);    // ex. "é"->"e", "'"->"" , "œ"->"oe"
-    for(const c of n){ norm += c; map.push(i); }
-  }
+  // mapping caractère original ↔ position normalisée
+  let norm = ''; const map = [];
+  for(let i=0;i<txt.length;i++){ for(const c of rgNorm(txt[i])){ norm+=c; map.push(i); } }
 
   const marques = new Array(txt.length).fill(false);
-  mots.forEach(mot => {
-    let from = 0, i;
-    while((i = norm.indexOf(mot, from)) !== -1){
-      for(let k=i;k<i+mot.length && k<map.length;k++) marques[map[k]]=true;
-      from = i + mot.length;
+  // marque les tokens du texte dont le radical correspond à un mot tapé
+  let pos=0;
+  norm.split(' ').forEach(()=>{}); // (no-op, gardé pour lisibilité)
+  // on parcourt token par token dans la chaîne normalisée
+  const re=/[a-z0-9]+/g; let mtok;
+  while((mtok=re.exec(norm))!==null){
+    const token=mtok[0], start=mtok.index;
+    if(mots.some(w=> rgMotMatch(w, token))){
+      for(let k=start;k<start+token.length && k<map.length;k++) marques[map[k]]=true;
     }
-  });
+  }
 
-  let out = '', open = false;
+  let out='', open=false;
   for(let i=0;i<txt.length;i++){
     if(marques[i] && !open){ out+='<mark>'; open=true; }
     if(!marques[i] && open){ out+='</mark>'; open=false; }
@@ -2078,50 +2113,86 @@ function rgFiltrer(){
   const input = document.getElementById('rgInput');
   const box = document.getElementById('rgBox');
   const brut = input.value;
-  const terme = rgNorm(brut);
+  const motsTapes = rgNorm(brut).split(' ').filter(w=>w.length>=2);
   box.classList.toggle('has-val', brut.length>0);
   rgPremier = null;
   let nb = 0;
 
   RG_INDEX.forEach(o => {
-    const match = !terme || terme.split(' ').every(w => o.hay.includes(w));
+    // chaque mot tapé doit matcher au moins un token de l'outil
+    const match = !motsTapes.length ||
+      motsTapes.every(w => o.tokens.some(tok => rgMotMatch(w, tok)));
     o.el.classList.toggle('rg-hidden', !match);
     o.el.classList.remove('rg-hit');
-    rgSurligner(o.titreEl, match?terme:'');
-    rgSurligner(o.pEl, match?terme:'');
+    rgSurligner(o.titreEl, match?motsTapes:null);
+    rgSurligner(o.pEl, match?motsTapes:null);
     if(match){ nb++; if(!rgPremier && o.type==='outil') rgPremier = o.el; }
   });
 
-  // Masquer les sections d'outils devenues vides + leurs pubs adjacentes
   document.querySelectorAll('section.cat').forEach(sec => {
     const visibles = sec.querySelectorAll('.outil:not(.rg-hidden), .reseau-card:not(.rg-hidden)').length;
     const aDesOutils = sec.querySelector('.outil, .reseau-card');
-    sec.classList.toggle('rg-hidden', !!terme && !!aDesOutils && visibles===0);
+    sec.classList.toggle('rg-hidden', motsTapes.length>0 && !!aDesOutils && visibles===0);
   });
 
-  // État vide
   const vide = document.getElementById('rgVide');
-  if(terme && nb===0){
+  if(motsTapes.length && nb===0){
     document.getElementById('rgVideTerme').textContent = brut;
     vide.classList.add('on');
-  } else {
-    vide.classList.remove('on');
-  }
+  } else { vide.classList.remove('on'); }
 
-  // Compteur + premier résultat mis en évidence
   const meta = document.getElementById('rgCount');
-  if(terme){
+  if(motsTapes.length){
     meta.textContent = nb + (nb>1?' outils trouvés':' outil trouvé');
     meta.style.display='';
     if(rgPremier) rgPremier.classList.add('rg-hit');
-  } else {
-    meta.style.display='none';
-  }
+  } else { meta.style.display='none'; }
+}
+
+/* ── Autocomplétion ── */
+let rgAcIndex = -1;
+function rgAutocomplete(){
+  const input = document.getElementById('rgInput');
+  const liste = document.getElementById('rgAuto');
+  const brut = input.value;
+  const motsTapes = rgNorm(brut).split(' ').filter(Boolean);
+  const dernier = motsTapes[motsTapes.length-1] || '';
+  rgAcIndex = -1;
+
+  if(dernier.length < 2){ liste.innerHTML=''; liste.classList.remove('on'); return; }
+
+  // propositions : mots du vocabulaire commençant par le dernier mot tapé (ou même radical)
+  const vus = new Set();
+  const props = RG_VOCAB
+    .filter(v => v.mot!==dernier && (v.mot.indexOf(dernier)===0 || rgMotMatch(dernier, v.mot)))
+    .filter(v => !vus.has(v.mot) && vus.add(v.mot))
+    .slice(0,6);
+
+  if(!props.length){ liste.innerHTML=''; liste.classList.remove('on'); return; }
+
+  const prefixe = motsTapes.slice(0,-1).join(' ');
+  liste.innerHTML = props.map((p,i)=>{
+    const reste = p.mot.indexOf(dernier)===0 ? p.mot.slice(dernier.length) : '';
+    const label = p.mot.indexOf(dernier)===0
+      ? `<b>${dernier}</b>${reste}` : p.mot;
+    return `<button type="button" data-val="${(prefixe?prefixe+' ':'')+p.mot}" data-i="${i}">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <span>${label}</span></button>`;
+  }).join('');
+  liste.classList.add('on');
+
+  liste.querySelectorAll('button').forEach(b=>{
+    b.onmousedown = e=>{ e.preventDefault();    // évite le blur avant le clic
+      input.value = b.dataset.val; rgFermerAuto(); rgFiltrer(); input.focus(); };
+  });
+}
+function rgFermerAuto(){
+  const l=document.getElementById('rgAuto'); l.innerHTML=''; l.classList.remove('on'); rgAcIndex=-1;
 }
 
 function rgEffacer(){
   const input = document.getElementById('rgInput');
-  input.value=''; rgFiltrer(); input.focus();
+  input.value=''; rgFermerAuto(); rgFiltrer(); input.focus();
 }
 
 function rgInit(){
@@ -2143,14 +2214,29 @@ function rgInit(){
     sugg.appendChild(b);
   });
 
-  input.addEventListener('input', rgFiltrer);
+  input.addEventListener('input', ()=>{ rgFiltrer(); rgAutocomplete(); });
   document.getElementById('rgClear').addEventListener('click', rgEffacer);
+  input.addEventListener('blur', ()=> setTimeout(rgFermerAuto,120));
+  input.addEventListener('focus', ()=>{ if(input.value.trim()) rgAutocomplete(); });
 
   input.addEventListener('keydown', e=>{
-    if(e.key==='Escape'){ rgEffacer(); input.blur(); }
-    if(e.key==='Enter' && rgPremier){
+    const liste = document.getElementById('rgAuto');
+    const items = [...liste.querySelectorAll('button')];
+    if(e.key==='Escape'){ if(items.length){ rgFermerAuto(); } else { rgEffacer(); input.blur(); } return; }
+    if(items.length && (e.key==='ArrowDown' || e.key==='ArrowUp')){
       e.preventDefault();
-      rgPremier.click();              // ouvre le 1er outil correspondant
+      rgAcIndex += (e.key==='ArrowDown'?1:-1);
+      if(rgAcIndex<0) rgAcIndex=items.length-1;
+      if(rgAcIndex>=items.length) rgAcIndex=0;
+      items.forEach((b,i)=> b.classList.toggle('ac-sel', i===rgAcIndex));
+      return;
+    }
+    if(e.key==='Enter'){
+      if(rgAcIndex>=0 && items[rgAcIndex]){
+        e.preventDefault();
+        input.value = items[rgAcIndex].dataset.val; rgFermerAuto(); rgFiltrer(); return;
+      }
+      if(rgPremier){ e.preventDefault(); rgPremier.click(); }
     }
   });
 
