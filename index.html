@@ -287,6 +287,35 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
 /* ── Bloc publicité ── */
 .pub{margin:26px auto;text-align:center;min-height:90px;display:flex;align-items:center;justify-content:center}
 .pub-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#B5AE9C;margin-bottom:4px;display:block;font-family:'IBM Plex Mono',monospace}
+
+/* ════════ RECHERCHE GLOBALE ════════ */
+.recherche-glob{position:sticky;top:0;z-index:40;background:var(--papier);border-bottom:1px solid var(--ligne);padding:13px 0;box-shadow:0 2px 8px rgba(27,42,74,.04)}
+.recherche-glob .wrap{position:relative}
+.rg-box{position:relative;display:flex;align-items:center;background:var(--blanc);border:1.5px solid var(--ligne);border-radius:11px;transition:.18s;box-shadow:var(--ombre)}
+.rg-box:focus-within{border-color:var(--bleu-form);box-shadow:0 0 0 3px rgba(43,76,155,.12)}
+.rg-box .loupe{position:absolute;left:15px;width:19px;height:19px;stroke:var(--encre-claire);pointer-events:none}
+.rg-box input{flex:1;border:none;background:transparent;outline:none;font-family:'IBM Plex Sans',sans-serif;font-size:16px;color:var(--encre);padding:14px 14px 14px 44px}
+.rg-box input::placeholder{color:#A9B2C4}
+.rg-kbd{position:absolute;right:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A9B2C4;border:1px solid var(--ligne);border-radius:5px;padding:2px 7px;pointer-events:none;background:var(--papier-fonce)}
+.rg-clear{position:absolute;right:11px;width:26px;height:26px;border:none;background:var(--papier-fonce);color:var(--encre-claire);border-radius:50%;cursor:pointer;font-size:15px;line-height:1;display:none;align-items:center;justify-content:center;transition:.15s}
+.rg-clear:hover{background:var(--tampon);color:#fff}
+.rg-box.has-val .rg-clear{display:flex}
+.rg-box.has-val .rg-kbd{display:none}
+.rg-meta{display:flex;align-items:center;gap:10px;margin-top:9px;min-height:20px;font-size:13px;color:var(--encre-claire);font-family:'IBM Plex Mono',monospace;flex-wrap:wrap}
+.rg-count{font-weight:600;color:var(--bleu-form)}
+.rg-sugg{display:flex;gap:7px;flex-wrap:wrap}
+.rg-sugg button{border:1px solid var(--ligne);background:var(--blanc);color:var(--encre-claire);border-radius:20px;padding:4px 12px;font-size:12.5px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:.15s}
+.rg-sugg button:hover{border-color:var(--tampon);color:var(--tampon);background:var(--blanc)}
+.rg-sugg-label{color:#A9B2C4}
+.outil mark,.reseau-card mark{background:rgba(192,57,43,.18);color:var(--tampon);border-radius:3px;padding:0 1px;font-style:normal}
+.outil.rg-hit{outline:2px solid rgba(43,76,155,.35);outline-offset:2px;animation:rgPop .25s ease}
+@keyframes rgPop{from{transform:scale(.97)}to{transform:scale(1)}}
+.outil.rg-hidden,.reseau-card.rg-hidden,section.cat.rg-hidden,.pub.rg-hidden{display:none!important}
+.rg-vide{display:none;text-align:center;padding:46px 18px;color:var(--encre-claire)}
+.rg-vide.on{display:block}
+.rg-vide h3{font-family:'Spectral',serif;font-size:20px;color:var(--encre);margin-bottom:8px}
+.rg-vide a{color:var(--bleu-form);font-weight:600}
+@media(max-width:560px){.rg-kbd{display:none}.rg-box input{font-size:15px}}
 </style>
 </head>
 <body>
@@ -326,7 +355,29 @@ footer .mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
   </div>
 </nav>
 
+<!-- ════════ RECHERCHE GLOBALE ════════ -->
+<div class="recherche-glob">
+  <div class="wrap">
+    <div class="rg-box" id="rgBox">
+      <svg class="loupe" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="rgInput" autocomplete="off" placeholder="Rechercher un outil : impôt, RSA, salaire net, résiliation, carte grise…" aria-label="Rechercher parmi tous les outils" aria-describedby="rgMeta">
+      <span class="rg-kbd" aria-hidden="true">/</span>
+      <button class="rg-clear" id="rgClear" type="button" aria-label="Effacer la recherche">✕</button>
+    </div>
+    <div class="rg-meta" id="rgMeta" aria-live="polite">
+      <span class="rg-sugg-label">Suggestions :</span>
+      <span class="rg-sugg" id="rgSugg"></span>
+    </div>
+  </div>
+</div>
+
 <main class="wrap">
+
+  <div class="rg-vide" id="rgVide">
+    <h3>Aucun outil ne correspond à « <span id="rgVideTerme"></span> »</h3>
+    <p>Essayez un autre mot-clé, ou décrivez votre situation dans l'assistant ci-dessous.<br>Vous pouvez aussi consulter directement <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a>.</p>
+  </div>
+
 
   <div class="avert">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
@@ -1919,11 +1970,205 @@ function rendreReseau(){
   ).join('');
 }
 
+/* ════════ RECHERCHE GLOBALE — moteur intuitif ════════ */
+// Mots-clés / synonymes additionnels par identifiant d'outil (ce que les gens tapent vraiment)
+const RG_SYNONYMES = {
+  aidesSociales:"rsa revenu solidarité active aah handicap ass allocation spécifique solidarité minima sociaux droits prestations caf",
+  aidesLogement:"apl al aide personnalisée logement caf loyer allocation logement",
+  primeActivite:"prime activité bonus travail smic complément revenu caf",
+  resteACharge:"reste à charge dépense aide déduction santé travaux",
+  retraite:"retraite pension trimestres âge légal départ carsat régime général",
+  impotRevenu:"impôt revenu ir déclaration 2042 fisc barème quotient familial décote",
+  tva:"tva taxe valeur ajoutée ht ttc 20% conversion prix",
+  plusValue:"plus-value immobilière vente bien impôt cession résidence",
+  tranches:"tranche imposition tmi taux marginal barème",
+  calendrierFiscal:"calendrier fiscal échéances dates impôt déclaration paiement",
+  brutNet:"salaire brut net conversion fiche paie cotisations net après impôt smic",
+  licenciement:"indemnité licenciement rupture ancienneté solde tout compte",
+  congesPayes:"congés payés jours acquis cp vacances",
+  preavis:"préavis démission licenciement durée délai départ",
+  chomage:"chômage are allocation retour emploi france travail pôle emploi indemnisation",
+  encadrementLoyers:"encadrement loyer plafond loyer référence paris ville tendue bail",
+  depotGarantie:"dépôt garantie caution restitution location bail propriétaire",
+  fraisNotaire:"frais notaire achat immobilier droits mutation ancien neuf acquisition",
+  aidesRenovation:"rénovation maprimerénov cee éco-ptz énergie isolation travaux dpe",
+  lettresLogement:"lettre propriétaire locataire congé bail travaux modèle courrier",
+  cotisations:"cotisations urssaf charges sociales micro auto-entrepreneur indépendant",
+  plafondCA:"chiffre affaires plafond micro entreprise seuil franchise tva auto-entrepreneur",
+  facture:"facture conforme mentions obligatoires devis micro entrepreneur",
+  revenusNets:"revenu net auto-entrepreneur bénéfice après cotisations impôt",
+  calendrierDeclarations:"calendrier déclarations urssaf échéances mensuelle trimestrielle dates",
+  lettreResiliation:"résiliation abonnement assurance salle sport contrat lettre résilier loi chatel",
+  attestationHonneur:"attestation honneur modèle déclaration sur l'honneur certifie",
+  miseEnDemeure:"mise en demeure relance impayé dette lettre recommandée amiable",
+  demandeRemboursement:"remboursement remboursé produit défectueux trop-perçu réclamation",
+  procuration:"procuration mandat représentation tiers autoriser pouvoir"
+};
+
+const RG_SUGGESTIONS = ["Impôt","RSA","Salaire net","Résiliation","Frais de notaire","Chômage","Auto-entrepreneur"];
+
+let RG_INDEX = [];
+
+function rgNorm(s){
+  return (s||'').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')   // enlève les accents
+    .replace(/[œ]/g,'oe').replace(/[æ]/g,'ae')
+    .replace(/['’]/g,' ').replace(/[^a-z0-9 ]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+
+function rgConstruireIndex(){
+  RG_INDEX = [];
+  document.querySelectorAll('.outil').forEach(btn => {
+    const titreEl = btn.querySelector('h3'), pEl = btn.querySelector('p');
+    const m = (btn.getAttribute('onclick')||'').match(/ouvrirOutil\('([^']+)'\)/);
+    const id = m ? m[1] : '';
+    const titre = titreEl ? titreEl.textContent : '';
+    const desc = pEl ? pEl.textContent : '';
+    const syn = RG_SYNONYMES[id] || '';
+    RG_INDEX.push({ el:btn, titreEl, pEl, type:'outil',
+      hay: rgNorm(titre+' '+desc+' '+syn) });
+  });
+  document.querySelectorAll('.reseau-card').forEach(card => {
+    const titreEl = card.querySelector('h3'), pEl = card.querySelector('p');
+    RG_INDEX.push({ el:card, titreEl, pEl, type:'reseau',
+      hay: rgNorm((titreEl?titreEl.textContent:'')+' '+(pEl?pEl.textContent:'')) });
+  });
+}
+
+function rgSurligner(el, terme){
+  if(!el) return;
+  if(el.dataset.rgOrig === undefined) el.dataset.rgOrig = el.textContent;
+  const txt = el.dataset.rgOrig;
+  if(!terme){ el.textContent = txt; return; }
+  const mots = terme.split(' ').filter(w => w.length >= 2);
+  if(!mots.length){ el.textContent = txt; return; }
+
+  // Normalise CHAQUE caractère séparément → garde un mapping 1 char original ↔ 1 char normalisé.
+  // (un caractère original peut produire 0..n chars normalisés ; on les rattache à son index)
+  let norm = '';
+  const map = [];               // map[posNorm] = index du caractère original
+  for(let i=0;i<txt.length;i++){
+    const n = rgNorm(txt[i]);    // ex. "é"->"e", "'"->"" , "œ"->"oe"
+    for(const c of n){ norm += c; map.push(i); }
+  }
+
+  const marques = new Array(txt.length).fill(false);
+  mots.forEach(mot => {
+    let from = 0, i;
+    while((i = norm.indexOf(mot, from)) !== -1){
+      for(let k=i;k<i+mot.length && k<map.length;k++) marques[map[k]]=true;
+      from = i + mot.length;
+    }
+  });
+
+  let out = '', open = false;
+  for(let i=0;i<txt.length;i++){
+    if(marques[i] && !open){ out+='<mark>'; open=true; }
+    if(!marques[i] && open){ out+='</mark>'; open=false; }
+    out += txt[i].replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  if(open) out+='</mark>';
+  el.innerHTML = out;
+}
+
+let rgPremier = null;
+
+function rgFiltrer(){
+  const input = document.getElementById('rgInput');
+  const box = document.getElementById('rgBox');
+  const brut = input.value;
+  const terme = rgNorm(brut);
+  box.classList.toggle('has-val', brut.length>0);
+  rgPremier = null;
+  let nb = 0;
+
+  RG_INDEX.forEach(o => {
+    const match = !terme || terme.split(' ').every(w => o.hay.includes(w));
+    o.el.classList.toggle('rg-hidden', !match);
+    o.el.classList.remove('rg-hit');
+    rgSurligner(o.titreEl, match?terme:'');
+    rgSurligner(o.pEl, match?terme:'');
+    if(match){ nb++; if(!rgPremier && o.type==='outil') rgPremier = o.el; }
+  });
+
+  // Masquer les sections d'outils devenues vides + leurs pubs adjacentes
+  document.querySelectorAll('section.cat').forEach(sec => {
+    const visibles = sec.querySelectorAll('.outil:not(.rg-hidden), .reseau-card:not(.rg-hidden)').length;
+    const aDesOutils = sec.querySelector('.outil, .reseau-card');
+    sec.classList.toggle('rg-hidden', !!terme && !!aDesOutils && visibles===0);
+  });
+
+  // État vide
+  const vide = document.getElementById('rgVide');
+  if(terme && nb===0){
+    document.getElementById('rgVideTerme').textContent = brut;
+    vide.classList.add('on');
+  } else {
+    vide.classList.remove('on');
+  }
+
+  // Compteur + premier résultat mis en évidence
+  const meta = document.getElementById('rgCount');
+  if(terme){
+    meta.textContent = nb + (nb>1?' outils trouvés':' outil trouvé');
+    meta.style.display='';
+    if(rgPremier) rgPremier.classList.add('rg-hit');
+  } else {
+    meta.style.display='none';
+  }
+}
+
+function rgEffacer(){
+  const input = document.getElementById('rgInput');
+  input.value=''; rgFiltrer(); input.focus();
+}
+
+function rgInit(){
+  rgConstruireIndex();
+  const input = document.getElementById('rgInput');
+  const meta = document.getElementById('rgMeta');
+
+  // compteur (inséré avant les suggestions)
+  const count = document.createElement('span');
+  count.className='rg-count'; count.id='rgCount'; count.style.display='none';
+  meta.insertBefore(count, meta.firstChild);
+
+  // suggestions cliquables
+  const sugg = document.getElementById('rgSugg');
+  RG_SUGGESTIONS.forEach(s => {
+    const b = document.createElement('button');
+    b.type='button'; b.textContent=s;
+    b.onclick = ()=>{ input.value=s; rgFiltrer(); input.focus(); };
+    sugg.appendChild(b);
+  });
+
+  input.addEventListener('input', rgFiltrer);
+  document.getElementById('rgClear').addEventListener('click', rgEffacer);
+
+  input.addEventListener('keydown', e=>{
+    if(e.key==='Escape'){ rgEffacer(); input.blur(); }
+    if(e.key==='Enter' && rgPremier){
+      e.preventDefault();
+      rgPremier.click();              // ouvre le 1er outil correspondant
+    }
+  });
+
+  // raccourci clavier "/" pour focus la recherche
+  document.addEventListener('keydown', e=>{
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault(); input.focus();
+    }
+  });
+}
+
 /* ════════ INITIALISATION ════════ */
 document.addEventListener('DOMContentLoaded', () => {
   chargerBaremes();
   rendreCerfa('');
   rendreReseau();
+  rgInit();
   // Initialiser les blocs publicitaires
   try {
     document.querySelectorAll('.adsbygoogle').forEach(() => {
